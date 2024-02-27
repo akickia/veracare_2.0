@@ -27,7 +27,7 @@
 @media screen and (max-width: 800px) {
   .card {
     &__info {
-      height: calc($base*10);
+      height: calc($base*15);
       overflow: hidden;
       @include grid(100%, auto)
     };

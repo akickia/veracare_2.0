@@ -5,7 +5,7 @@
     "link": "https://www.bokadirekt.se/places/holistic-mind-eskilstuna-35977",
     "img": "Reiki.jpg",
     "alt": "Veronica med certifiering från reiki-utbildningar",
-    "category": "treatments"
+    "category": "behandlingar"
 },
 {
   "title": "YIN/RESTORATIVE-YOGA",
@@ -13,7 +13,7 @@
   "link": "https://www.bokadirekt.se/places/holistic-mind-eskilstuna-35977",
   "img": "yin-yoga.jpg",
   "alt": "Veronica på yogamatta",
-  "category": "treatments"
+  "category": "behandlingar"
 },
 {
   "title": "YOGA I HÄRAD",
@@ -22,7 +22,7 @@
   "img": "harad.jpg",
   "alt": "yogamattor på brygga med utsikt över vattnet",
 
-  "category": "treatments"
+  "category": "behandlingar"
 },
 {
   "title": "Avslappningsmassage",
@@ -30,7 +30,7 @@
   "link": "https://www.bokadirekt.se/places/holistic-mind-eskilstuna-35977",
   "img": "Massage.jpg",
   "alt": "massagebord",
-  "category": "treatments"
+  "category": "behandlingar"
 },
 {
   "title": "Healing-massage",
@@ -38,7 +38,7 @@
   "link": "https://www.bokadirekt.se/places/holistic-mind-eskilstuna-35977",
   "img": "reiki2.jpg",
   "alt": "Veronica utför healing-massage på kund",
-  "category": "treatments"
+  "category": "behandlingar"
 },
 {
   "title": "Coaching",
@@ -46,7 +46,7 @@
   "link": "https://www.bokadirekt.se/places/holistic-mind-eskilstuna-35977",
   "img": "Coachning.jpg",
   "alt": "Dator och böcker om coaching",
-  "category": "treatments"
+  "category": "behandlingar"
 },
 {
   "title": "Ellinor Rydensjö - Healing och seans",
@@ -54,7 +54,7 @@
   "link": "https://www.facebook.com/profile.php?id=61552681274872",
   "img": "collab-ellinor2.jpg",
   "alt": "Samarbete med Ellinor",
-  "category": "collaborations"
+  "category": "samarbeten"
 },
 {
   "title": "Linnea Åberg - Stresspedagog",
@@ -62,7 +62,7 @@
   "link": "../src/assets/img/stress-leccture.pdf",
   "img": "leccure-img.jpg",
   "alt": "information om föreläsning kring stresshantering med Linnea och Veronica",
-  "category": "collaborations"
+  "category": "samarbeten"
 },
 {
   "title": "Joline Lyttinen - Soundhealing och Cacaoceremoni",
@@ -70,7 +70,7 @@
   "link": "https://www.facebook.com/VeracareConsulting",
   "img": "helande-cermoni.jpg",
   "alt": "information om helande ceremoni",
-  "category": "collaborations"
+  "category": "samarbeten"
 },
 {
   "title": "Mimmi Skogsberg - Frigörande dans",
@@ -78,7 +78,7 @@
   "link": "https://www.facebook.com/VeracareConsulting",
   "img": "frigorande-dans.jpg",
   "alt": "fötter i danssal",
-  "category": "collaborations"
+  "category": "samarbeten"
 },
 {
   "title": "Kicki Lindstrand - Hemsida",
@@ -86,7 +86,7 @@
   "link": "https://akickia.se",
   "img": "portfolio.jpg",
   "alt": "kickis portfoliosida",
-  "category": "collaborations"
+  "category": "samarbeten"
 },
 {
   "title": "Är det körigt på jobbet?",
@@ -110,6 +110,6 @@
   "link": "https://www.medborgarskolan.se/arrangemang-sok/hantera-din-stress-med-mindfulness-som-verktyg-1359924/?fbclid=IwAR2fP6k40pPIWkBo44d3cJFr6STdb1zfSgIRMMm3mcICZv3RxLF1pCzYZwc",
   "img": "profil3.jpg",
   "alt": "Veronica tittar in i kameran under en av sina kurser",
-  "category": "course"
+  "category": "kurser"
 }
 ]
