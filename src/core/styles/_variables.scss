@@ -60,11 +60,18 @@ $open-btn-size: calc($base*1.2); //TODO: Check...
 
 @mixin h3Font {
   font-size: $font-h3;
+  text-transform: uppercase;
 }
 
 @mixin pFont {
   font-size: $font-p;
-  line-height: $line-height-m;
+  line-height: $line-height-l;
+  // letter-spacing: $letter-spacing; TODO: Check...
+}
+
+@mixin smallFont {
+  font-size: $font-small;
+  text-transform: uppercase;
 }
 
 @mixin aFont {

@@ -1,0 +1,44 @@
+@import "../../core/styles/variables";
+
+.card {
+  background-color: $clr-third;
+  @include grid(100%, auto);
+  gap: $gap;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  padding: $padding-xl $padding;
+  margin: $margin-m;
+  img {
+    max-width: 50%;
+    margin: auto
+  }
+  &__info {
+    @include grid(100%, auto);
+    gap: $gap;
+    &--text {
+      align-self: center;
+    }
+  }
+  &__more {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .card {
+    &__info {
+      height: calc($base*10);
+      overflow: hidden;
+      @include grid(100%, auto)
+    };
+    &__info.open {
+      height: unset;
+    }
+    &__more {
+      display: block;
+      @include smallFont;
+      font-style: italic;
+      text-align: end;
+    }
+  }  
+}

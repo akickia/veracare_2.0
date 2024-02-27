@@ -1,0 +1,12 @@
+@import "../../core/styles/variables";
+
+.primary {
+  @include pFont;
+  background-color: $clr-primary;
+  color: $clr-third;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: $padding-m $padding-xl;
+  border-radius: calc($border-radius*3);
+  box-shadow: $box-shadow;
+}
