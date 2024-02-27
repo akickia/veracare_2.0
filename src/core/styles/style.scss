@@ -1,0 +1,39 @@
+@import "./variables";
+
+//Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+//General
+body {
+  max-width: 1000px;
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+  background-color: $clr-secondary;
+  color: $clr-primary;
+}
+
+a {
+  color: $clr-primary;
+  @include aFont;
+}
+
+h1 {
+  @include h1Font;
+}
+
+h2 {
+  @include h2Font;
+}
+
+h3 {
+  @include h3Font;
+}
+
+p {
+  @include pFont;
+}

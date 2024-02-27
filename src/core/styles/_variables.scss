@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+//base
+$base: 1rem;
+
+//Fonts
+$fontFamily: "Open Sans", sans-serif;
+
+$font-h1: calc($base*2.5);
+$font-h2: calc($base*1.5);
+$font-h3: calc($base*1.25);
+$font-p: $base;
+$font-small: calc($base*0.75);
+$font-xs: calc($base*0.625);
+
+$letter-spacing: 0.05em;
+$line-height-m: calc($base*1.5); //24
+$line-height-l: calc($base*1.75); //28
+
+//Colors
+$clr-primary: rgb(0, 65, 21);
+$clr-secondary: rgb(179, 157, 114);
+$clr-third: rgb(240, 235, 227);
+$clr-shadow: rgba(69, 128, 81, 0.3);
+
+//Padding/Margin/Gap
+$padding-s: calc($base*0.5);
+$padding-m: calc($base*0.75);
+$padding: $base;
+$padding-l: calc($base*1.5);
+$padding-xl: calc($base*2);
+
+$margin-s: calc($base*0.5);
+$margin-m: calc($base*0.75);
+$margin: $base;
+$margin-l: calc($base*1.5);
+$margin-xl: calc($base*2);
+
+$gap: $base;
+
+//Other
+$box-shadow: 5px 5px 10px $clr-shadow;
+$border-radius: 5px;
+
+$close-btn-size: calc($base*2.25);
+$open-btn-size: calc($base*1.2); //TODO: Check... 
+
+
+//Mixins
+@mixin h1Font {
+  font-size: $font-h1;
+  text-transform: uppercase;
+  color:$clr-primary;
+  text-align: center;
+}
+
+@mixin h2Font {
+  font-size: $font-h2;
+}
+
+@mixin h3Font {
+  font-size: $font-h3;
+}
+
+@mixin pFont {
+  font-size: $font-p;
+  line-height: $line-height-m;
+}
+
+@mixin aFont {
+  font-size: $font-h3;
+  text-transform: uppercase;
+  color: $clr-primary;
+}
+
+@mixin flex($row, $justify, $align) {
+  display: flex;
+  flex-direction: $row;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin grid($column, $row) {
+  display: grid;
+  grid-template-columns: $column;
+  grid-template-rows: $row;
+}
+
