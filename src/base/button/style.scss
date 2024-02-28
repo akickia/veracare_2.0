@@ -9,4 +9,14 @@
   padding: $padding-m $padding-xl;
   border-radius: calc($border-radius*3);
   box-shadow: $box-shadow;
+  transition: opacity .25s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: .8;
+}
+
+button:active {
+  transform: scale(.95)
 }

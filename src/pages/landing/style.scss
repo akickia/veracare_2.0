@@ -1,0 +1,22 @@
+@import "../../core/styles/variables";
+
+.landing {
+  .card.hero {
+    .hero__links {
+      gap: calc($gap*.25)
+    }
+  }
+  .flex-container {
+    @include flex(row, center, center);
+    gap: $gap;
+    img {
+      max-width: 30%
+    }
+  }
+  .news {
+    @include grid(repeat(2, 1fr), auto);
+    &__span {
+      grid-column: span 2;
+    }
+  }
+}

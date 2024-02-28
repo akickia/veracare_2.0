@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import './style.scss';
 import Button from '../button';
 
-export function CardPrimary({ item }) {
+export default function CardPrimary({ item }) {
 
   const img = '../src/assets/img/' + item.img;
 
@@ -33,7 +33,7 @@ export function CardPrimary({ item }) {
       </p>
 
       <section className="card__book-btn">
-        <Button onClick={() => console.log(item.link)}>Boka tid</Button>
+        <Button link={"https://veracare.se"}>Boka tid</Button>
       </section>
     </article>
   );

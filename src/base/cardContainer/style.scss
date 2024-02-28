@@ -1,8 +1,8 @@
 @import "../../core/styles/variables";
 
-.card-secondary {
+.card.hero {
   @include grid(repeat(2, 1fr), auto);
-  &__links {
+  .hero__links {
     @include grid(100%, auto);
     gap: $gap;
     align-content: center;
@@ -11,6 +11,10 @@
       @include aFont;
       font-size: $font-p;
       font-weight: 600;
+      cursor: pointer;
     }
-  }
+    a:hover {
+      font-weight: 700;
+    }
+}
 }
