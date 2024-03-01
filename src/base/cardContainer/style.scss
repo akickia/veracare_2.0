@@ -18,3 +18,9 @@
     }
 }
 }
+
+@media screen and (max-width: 800px) {
+  .card.hero {
+  @include grid(100%, auto);
+  }
+}

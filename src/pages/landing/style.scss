@@ -20,3 +20,19 @@
     }
   }
 }
+
+@media screen and (max-width: 800px) {
+  .landing 
+  {.news {
+    @include grid(100%, auto);  
+    &__span {
+      grid-column: auto;
+    }  
+    }
+    .flex-container {
+      flex-direction: column;
+      button {
+        font-size: $font-small;
+      }
+    }}
+  }

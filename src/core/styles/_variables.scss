@@ -42,8 +42,6 @@ $gap: $base;
 $box-shadow: 5px 5px 10px $clr-shadow;
 $border-radius: 5px;
 
-$close-btn-size: calc($base*2.25);
-$open-btn-size: calc($base*1.2); //TODO: Check... 
 
 
 //Mixins
@@ -76,7 +74,7 @@ $open-btn-size: calc($base*1.2); //TODO: Check...
 }
 
 @mixin aFont {
-  font-size: $font-h3;
+  font-size: $font-p;
   text-transform: uppercase;
   color: $clr-primary;
   text-decoration: none;

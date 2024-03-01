@@ -9,14 +9,24 @@
 
 //General
 body {
-  max-width: 1000px;
-  width: 100%;
   min-height: 100vh;
   text-align: center;
   background-color: $clr-secondary;
   color: $clr-primary;
   font-family: $fontFamily;
-  margin: auto;
+}
+
+main {
+  max-width: 1000px;
+  width: 100%;
+  margin: $margin auto;
+  @include grid(100%, auto);
+  gap: $gap;
+}
+
+.grid {
+  @include grid(100%, auto);
+  gap: $gap;
 }
 
 a {

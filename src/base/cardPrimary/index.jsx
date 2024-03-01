@@ -9,10 +9,6 @@ export default function CardPrimary({ item }) {
 
   const [openMore, setOpenMore] = useState(true);
 
-  useEffect(() => {
-    if (openMore) {
-    }
-  }, [openMore]);
 
   return (
     <article className="card">
@@ -33,7 +29,7 @@ export default function CardPrimary({ item }) {
       </p>
 
       <section className="card__book-btn">
-        <Button link={"https://veracare.se"}>Boka tid</Button>
+        <Button link={item.link}>{item.linkText}</Button>
       </section>
     </article>
   );

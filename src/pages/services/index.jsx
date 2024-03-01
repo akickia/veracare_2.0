@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import jsonData from '../../assets/data/info.json';
 import CardPrimary from '../../base/cardPrimary';
 import CardContainer from '../../base/cardContainer';
-import './style.scss';
+import { motion } from 'framer-motion';
 import Button from '../../base/button';
+import HeadingContainer from '../../base/headingContainer';
 
 export default function Services({ category }) {
   const [data, setData] = useState();
@@ -21,8 +22,11 @@ export default function Services({ category }) {
     });
 
   return (
-    <main className="services">
-      <CardContainer category={category}>
+    <motion.main className="services" initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 2 }}>
+      <HeadingContainer heading={category} />
           {category === 'behandlingar' ? (
             <article className="card hero">
               <img src="../src/assets/img/treatments.jpg" />
@@ -57,7 +61,7 @@ export default function Services({ category }) {
             </article>
           )}
         <section className="grid">{cardsEl && cardsEl}</section>
-      </CardContainer>
-    </main>
+
+    </motion.main>
   );
 }
