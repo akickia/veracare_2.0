@@ -1,24 +1,24 @@
 @import '../../core/styles/variables';
 
 footer {
-background-color: $clr-third;
-.footer {
-  padding: $padding;
-  &__content {
-    @include flex(row, space-between, center);
-    max-width: 62.5rem;
-    margin: auto;
-    gap: $gap;
+  background-color: $clr-third;
+  .footer {
     padding: $padding;
-    &__contact {
-      text-align: left;
-    &--links {
-      min-width: 18.75rem;
-      @include grid(100%, auto);
-      padding-block:$padding;
+    &__content {
+      @include flex(row, space-between, center);
+      max-width: 62.5rem;
+      margin: auto;
       gap: $gap;
+      padding: $padding;
+      &__contact {
+        text-align: left;
+        &--links {
+          min-width: 20rem;
+          @include grid(100%, auto);
+          padding-block: $padding;
+          gap: $gap;
+        }
       }
-    }
     }
     &__copyright * {
       font-size: $font-small;
@@ -33,7 +33,6 @@ background-color: $clr-third;
   footer .footer {
     &__content {
       flex-direction: column;
-
     }
   }
 }

@@ -19,7 +19,8 @@ export default function Footer() {
             <h3>Kontakt</h3>
             <section className="footer__content__contact--links">
               <a>
-                <FontAwesomeIcon icon={faPhone} /> 070-228 82 66
+                {' '}
+                <FontAwesomeIcon icon={faPhone} /> 070-228 82 66{' '}
               </a>
               <a href="mailto:veronica.lundman@gmail.com">
                 <FontAwesomeIcon icon={faEnvelope} /> veronica.lundman@gmail.com
@@ -41,9 +42,9 @@ export default function Footer() {
         </section>
         <section className="footer__copyright">
           <p>Copyright © All Rights Reserved</p>
-            <a href="http://akickia.se" target="_blank">
-              Created by akickia
-            </a>
+          <a href="http://akickia.se" target="_blank">
+            Created by akickia
+          </a>
         </section>
       </article>
     </footer>

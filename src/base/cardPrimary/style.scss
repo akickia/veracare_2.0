@@ -1,4 +1,4 @@
-@import "../../core/styles/variables";
+@import '../../core/styles/variables';
 
 .card {
   background-color: $clr-third;
@@ -9,7 +9,7 @@
   padding: $padding-xl $padding;
   img {
     max-width: 50%;
-    margin: auto
+    margin: auto;
   }
   &__info {
     @include grid(100%, auto);
@@ -21,15 +21,22 @@
   &__more {
     display: none;
   }
+  .flex-container {
+    @include flex(row, center, center);
+    gap: $gap;
+    img {
+      max-width: 30%;
+    }
+  }
 }
 
 @media screen and (max-width: 800px) {
   .card {
     &__info {
-      height: calc($base*15);
+      height: calc($base * 15);
       overflow: hidden;
-      @include grid(100%, auto)
-    };
+      @include grid(100%, auto);
+    }
     &__info.open {
       height: unset;
     }
@@ -39,5 +46,17 @@
       font-style: italic;
       text-align: end;
     }
-  }  
+    .flex-container {
+      flex-direction: column;
+      button {
+        font-size: $font-small;
+      }
+      img {
+        max-width: 80%;
+      }
+    }
+  }
+  .card:not(.hero) img {
+    max-width: 80%;
+  }
 }

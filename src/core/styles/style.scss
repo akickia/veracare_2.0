@@ -1,4 +1,4 @@
-@import "./variables";
+@import './variables';
 
 //Reset
 * {
@@ -29,6 +29,11 @@ main {
   gap: $gap;
 }
 
+.grid-container {
+  @include grid(repeat(2, 1fr), auto);
+  gap: $gap;
+}
+
 a {
   color: $clr-primary;
   @include aFont;
@@ -36,7 +41,7 @@ a {
 
 a:hover {
   transform: scale(1.05);
-  font-weight: 800
+  font-weight: 800;
 }
 
 h1 {
