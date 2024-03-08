@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Button from '../../base/button/index';
 import { motion } from 'framer-motion';
-
 import './style.scss';
 import HeadingContainer from '../../base/headingContainer';
 import { Link } from 'react-router-dom';
+import Hero from '../../base/hero';
 
 export default function Landing() {
   const [openMore, setOpenMore] = useState(true);
@@ -17,21 +17,17 @@ export default function Landing() {
       transition={{ duration: 2 }}
     >
       <HeadingContainer heading={'Välkommen till VeraCare'} />
-      <article className="card hero">
-        <img src="../src/assets/img/profil.jpg" />
-        <section className="hero__links">
-          <h2>Stresshantering</h2>
-          <h2>Mindfullness</h2>
-          <h2>Känslokompetens</h2>
-          <a href="#">Coaching</a>
-          <a href="#">Healing</a>
-          <a href="#">Yoga</a>
-          <a href="#">Samarbeten</a>
-          <a href="#">Föreläsningar</a>
-          <a href="#">Event</a>
-          <a href="#">Massage</a>
-        </section>
-      </article>
+      <Hero
+        img={'../src/assets/img/profil.jpg'}
+        links={[
+          'STRESSHANTERING',
+          'MINDFULLNESS',
+          'KÄNSLOKOMPETENS',
+          'YOGA',
+          'HEALING',
+          'COACHING',
+        ]}
+      ></Hero>
       <article className="card">
         <h2>Behöver du hjälp att sänka stressen i din vardag?</h2>
         <h3>Vet du inte hur eller var du ska börja?</h3>
@@ -50,15 +46,18 @@ export default function Landing() {
           att guida dig kärleksfullt genom processen.
         </p>
         <section className="flex-container">
-          <Button link={'https://www.facebook.com/VeracareConsulting'}>
-            VeraCare på FaceBook
-          </Button>
           <Button
             link={
               'https://www.bokadirekt.se/places/holistic-mind-eskilstuna-35977'
             }
           >
-            Holistic mind boka direkt
+            Bokadirekt.se
+          </Button>
+          <Button link={'https://www.facebook.com/VeracareConsulting'}>
+            VeraCare på FaceBook
+          </Button>
+          <Button link={'https://holisticmindeskilstuna.wordpress.com/'}>
+            Holistic Mind
           </Button>
         </section>
       </article>
@@ -113,15 +112,18 @@ export default function Landing() {
           <b>Ser fram emot att höra av dig!</b>
         </p>
         <section className="flex-container">
-          <Button link={'https://www.facebook.com/VeracareConsulting'}>
-            VeraCare på FaceBook
-          </Button>
           <Button
             link={
               'https://www.bokadirekt.se/places/holistic-mind-eskilstuna-35977'
             }
           >
-            Holistic mind boka direkt
+            Bokadirekt.se
+          </Button>
+          <Button link={'https://www.facebook.com/VeracareConsulting'}>
+            VeraCare på FaceBook
+          </Button>
+          <Button link={'https://holisticmindeskilstuna.wordpress.com/'}>
+            Holistic Mind
           </Button>
         </section>
       </article>
@@ -198,9 +200,21 @@ export default function Landing() {
         <h3>Jag finns i Eskilstuna och Strängnäs.</h3>
         <h3>Kontakta mig gärna om du har frågor eller funderingar.</h3>
         <section className="flex-container">
-          <Button link={'https://www.facebook.com/VeracareConsulting'}>
-            Kontakta mig
-          </Button>
+          <section className="flex-container">
+            <Button
+              link={
+                'https://www.bokadirekt.se/places/holistic-mind-eskilstuna-35977'
+              }
+            >
+              Bokadirekt.se
+            </Button>
+            <Button link={'https://www.facebook.com/VeracareConsulting'}>
+              VeraCare på FaceBook
+            </Button>
+            <Button link={'https://holisticmindeskilstuna.wordpress.com/'}>
+              Holistic Mind
+            </Button>
+          </section>
         </section>
       </article>
     </motion.main>

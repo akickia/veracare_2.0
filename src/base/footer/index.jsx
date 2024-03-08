@@ -15,9 +15,9 @@ export default function Footer() {
               src="src/assets/img/logo.jpg"
             ></img>
           </Link>
-          <section className="footer__content__contact">
+          <section className="contact">
             <h3>Kontakt</h3>
-            <section className="footer__content__contact--links">
+            <section className="contact--links">
               <a>
                 {' '}
                 <FontAwesomeIcon icon={faPhone} /> 070-228 82 66{' '}

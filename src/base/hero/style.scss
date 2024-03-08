@@ -1,0 +1,22 @@
+@import '../../core/styles/variables';
+
+.card.hero {
+  @include grid(repeat(2, 1fr), auto);
+  .hero__info {
+    @include grid(100%, auto);
+    gap: $gap;
+    align-content: space-around;
+    max-width: 80%;
+  }
+  .hero__links {
+    @include grid(100%, auto);
+    gap: $gap;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .card.hero {
+    @include grid(100%, auto);
+  }
+}

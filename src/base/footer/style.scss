@@ -10,15 +10,6 @@ footer {
       margin: auto;
       gap: $gap;
       padding: $padding;
-      &__contact {
-        text-align: left;
-        &--links {
-          min-width: 20rem;
-          @include grid(100%, auto);
-          padding-block: $padding;
-          gap: $gap;
-        }
-      }
     }
     &__copyright * {
       font-size: $font-small;
@@ -26,6 +17,16 @@ footer {
       text-transform: none;
       line-height: normal;
     }
+  }
+}
+
+.contact {
+  text-align: left;
+  &--links {
+    min-width: 20rem;
+    @include grid(100%, auto);
+    padding-block: $padding;
+    gap: $gap;
   }
 }
 

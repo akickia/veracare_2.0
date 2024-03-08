@@ -1,11 +1,6 @@
 @import '../../core/styles/variables';
 
 .landing {
-  .card.hero {
-    .hero__links {
-      gap: calc($gap * 0.25);
-    }
-  }
   .news {
     @include grid(repeat(2, 1fr), auto);
     &__span {

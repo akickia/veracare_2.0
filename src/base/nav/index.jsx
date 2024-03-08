@@ -8,8 +8,7 @@ export default function NavComponent() {
       <Link to="./behandlingar">Behandlingar</Link>
       <Link to="./samarbeten">Samarbeten</Link>
       <Link to="./workshop">Workshop</Link>
-      <Link to="./about">Om mig</Link>
-      <Link to="./contact">Kontakt</Link>
+      <Link to="./om">Om mig</Link>
     </>
   );
 }

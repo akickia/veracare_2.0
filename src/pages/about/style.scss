@@ -1,0 +1,19 @@
+.about {
+  .contact__btns {
+    grid-column: span 2;
+  }
+  .flex-container {
+    justify-content: space-around;
+    video {
+      max-width: 320px;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .about {
+    .contact__btns {
+      grid-column: span 1;
+    }
+  }
+}

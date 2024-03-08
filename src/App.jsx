@@ -4,6 +4,7 @@ import Header from './base/header';
 import './core/styles/style.scss';
 import Landing from './pages/landing';
 import Services from './pages/services';
+import About from './pages/about';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Admin from './pages/admin';
 
@@ -30,9 +31,9 @@ function App() {
               path="/workshop"
               element={<Services category={'workshop'} />}
             />
+            <Route path="/om" element={<About />} />
+
             <Route path="/admin" element={<Admin />} exact />
-            {/* <Route path='/om' element={<About />} />
-             */}
           </Routes>
         </AnimatePresence>
         <Footer />

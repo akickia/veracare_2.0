@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Button from '../../base/button';
 import HeadingContainer from '../../base/headingContainer';
 import { getServices } from './data';
+import Hero from '../../base/hero';
 
 export default function Services({ category }) {
   const [data, setData] = useState();
@@ -44,26 +45,28 @@ export default function Services({ category }) {
     >
       <HeadingContainer heading={category} />
       {category === 'behandlingar' ? (
-        <article className="card hero">
-          <img src="../src/assets/img/treatments.jpg" />
-          <section className="hero__links">
-            <a href="#">Reiki-healing</a>
-            <a href="#">Yoga</a>
-            <a href="#">Massage</a>
-            <a href="#">Coaching</a>
-          </section>
-        </article>
+        <Hero
+          img={'../src/assets/img/treatments.jpg'}
+          links={['Reiki-healing', 'Yoga', 'Massage', 'Coaching']}
+        >
+          <p>
+            Här finner du information om de behandlingar jag erbjuder. Jag är
+            ansluten till e-passi och mina pass finns att boka på bokadirekt.se
+          </p>
+        </Hero>
       ) : category === 'workshop' ? (
-        <article className="card hero">
-          <img src="../src/assets/img/stress2.jpg" />
-          <section className="hero__links">
-            <a href="#">Workshop</a>
-            <a href="#">Kurser</a>
-          </section>
-        </article>
+        <Hero
+          img={'../src/assets/img/stress2.jpg'}
+          className="card hero"
+          links={['Kurser', 'Workshops', 'Föreläsningar']}
+        >
+          <p>
+            Här finner du information om workshops och kurser som jag håller
+            själv eller tillsammans med andra.
+          </p>
+        </Hero>
       ) : (
-        <article className="card">
-          <h3>Event och mässor</h3>
+        <Hero img={'../src/assets/img/massa.jpg'}>
           <p>
             Jag samarbetar gärna och ofta med andra kunniga och härliga
             människor inom olika områden. Just nu håller jag på mycket med
@@ -72,13 +75,8 @@ export default function Services({ category }) {
             dans och skogsbad med yoga. Lättast hittar man dessa event på
             facebook - Veracare Consulting AB.
           </p>
-          <p>Här finns exempel på samarbeten och event.</p>
-          <section className="card__book-btn">
-            <Button onClick={() => console.log('hej')}>
-              VeraCare på FaceBook
-            </Button>
-          </section>
-        </article>
+          <p>På denna sida finns exempel på samarbeten och event.</p>
+        </Hero>
       )}
       <section className="grid">{cardsEl && cardsEl}</section>
     </motion.main>
