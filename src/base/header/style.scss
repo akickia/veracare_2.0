@@ -17,21 +17,18 @@ header {
         background-color: $clr-third;
         gap: $gap;
         margin-inline-end: $margin;
-
       }
       &--mobile {
-
-        
         div {
           @include flex(column, center, flex-start);
-          gap: $gap;        
+          gap: $gap;
           position: fixed;
           top: 5rem;
           left: 0;
           padding: $padding;
           background-color: $clr-third;
           overflow: hidden;
-          width: calc($base*12.5)
+          width: calc($base * 12.5);
         }
         button {
           border: none;
@@ -42,48 +39,18 @@ header {
         }
         .closebtn {
           position: absolute;
-          right: calc($base*.5);
+          right: calc($base * 0.5);
           font-size: $font-h2;
-          top: calc($base*.5);
+          top: calc($base * 0.5);
         }
         .openbtn {
-          // left: $base;
           display: flex;
-          min-width: min-content
+          min-width: min-content;
         }
       }
     }
     img {
       width: 12.5rem;
-      margin-left: auto;
     }
   }
 }
-
-// @media screen and (max-width: 800px) {
-//   header {
-//     .header {
-//       position: relative;
-//       nav {
-//         flex-direction: column;
-//         align-items: flex-start;
-//         position: absolute;
-//         top: $base;
-//         left: 0;
-//         padding-left: $padding;
-//         height: 3rem;
-//         nav.open {
-//           height: unset;
-//         }
-//         .closebtn, .openbtn {
-//           display: flex;
-//         }
-//         .closebtn {
-//           position: absolute;
-//           right: $base;
-//           top: $base;
-//         }
-//       }
-//     }
-//   }
-// }

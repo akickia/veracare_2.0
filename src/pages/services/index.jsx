@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import jsonData from '../../assets/data/info.json';
 import CardPrimary from '../../base/cardPrimary';
-import CardContainer from '../../base/cardContainer';
 import { motion } from 'framer-motion';
 import Button from '../../base/button';
 import HeadingContainer from '../../base/headingContainer';
@@ -14,23 +12,27 @@ export default function Services({ category }) {
     const fetchData = async () => {
       try {
         const jsonData = await getServices();
-        console.log(jsonData);
-        setData(jsonData.menu);
+        setData(jsonData.services);
       } catch (error) {
         console.error('Error in fetchData: ', error);
       }
     };
-
     fetchData();
   }, []);
 
+  function sortDataByOrder(data) {
+    return data.sort((a, b) => {
+      return a.order - b.order;
+    });
+  }
+
   const cardsEl =
     data &&
-    data.map((item, i) => {
-      if (item.category === category) {
+    sortDataByOrder(data.filter((item) => item.category === category)).map(
+      (item, i) => {
         return <CardPrimary item={item} key={i}></CardPrimary>;
       }
-    });
+    );
 
   return (
     <motion.main

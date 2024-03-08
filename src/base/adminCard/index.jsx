@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-
-import './style.scss';
 import Button from '../button';
 
-export default function CardPrimary({ item }) {
+export function AdminCard({ item }) {
   const [openMore, setOpenMore] = useState(true);
 
   return (
-    <article className="card">
+    <article className="card admin__card">
       <h3>{item.title}</h3>
 
       <section className={openMore ? 'card__info' : 'card__info open'}>
