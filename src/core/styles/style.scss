@@ -14,6 +14,7 @@ body {
   background-color: $clr-secondary;
   color: $clr-primary;
   font-family: $fontFamily;
+  position: relative;
 }
 
 main {
@@ -22,6 +23,7 @@ main {
   margin: $margin auto;
   @include grid(100%, auto);
   gap: $gap;
+  min-height: 80%;
 }
 
 .grid {
@@ -64,4 +66,10 @@ img {
   max-width: 100%;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
+}
+
+@media screen and (max-width: 800px) {
+  .grid-container {
+    @include grid(100%, auto);
+  }
 }

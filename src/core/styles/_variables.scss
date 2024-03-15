@@ -4,18 +4,18 @@
 $base: 1rem;
 
 //Fonts
-$fontFamily: "Open Sans", sans-serif;
+$fontFamily: 'Open Sans', sans-serif;
 
-$font-h1: calc($base*2.5);
-$font-h2: calc($base*1.5);
-$font-h3: calc($base*1.25);
+$font-h1: calc($base * 2.5);
+$font-h2: calc($base * 1.5);
+$font-h3: calc($base * 1.25);
 $font-p: $base;
-$font-small: calc($base*0.75);
-$font-xs: calc($base*0.625);
+$font-small: calc($base * 0.75);
+$font-xs: calc($base * 0.625);
 
 $letter-spacing: 0.05em;
-$line-height-m: calc($base*1.5); //24
-$line-height-l: calc($base*1.75); //28
+$line-height-m: calc($base * 1.5); //24
+$line-height-l: calc($base * 1.75); //28
 
 //Colors
 $clr-primary: rgb(0, 65, 21);
@@ -24,17 +24,17 @@ $clr-third: rgb(240, 235, 227);
 $clr-shadow: rgba(69, 128, 81, 0.3);
 
 //Padding/Margin/Gap
-$padding-s: calc($base*0.5);
-$padding-m: calc($base*0.75);
+$padding-s: calc($base * 0.5);
+$padding-m: calc($base * 0.75);
 $padding: $base;
-$padding-l: calc($base*1.5);
-$padding-xl: calc($base*2);
+$padding-l: calc($base * 1.5);
+$padding-xl: calc($base * 2);
 
-$margin-s: calc($base*0.5);
-$margin-m: calc($base*0.75);
+$margin-s: calc($base * 0.5);
+$margin-m: calc($base * 0.75);
 $margin: $base;
-$margin-l: calc($base*1.5);
-$margin-xl: calc($base*2);
+$margin-l: calc($base * 1.5);
+$margin-xl: calc($base * 2);
 
 $gap: $base;
 
@@ -42,13 +42,11 @@ $gap: $base;
 $box-shadow: 5px 5px 10px $clr-shadow;
 $border-radius: 5px;
 
-
-
 //Mixins
 @mixin h1Font {
   font-size: $font-h1;
   text-transform: uppercase;
-  color:$clr-primary;
+  color: $clr-primary;
   text-align: center;
 }
 
@@ -92,4 +90,3 @@ $border-radius: 5px;
   grid-template-columns: $column;
   grid-template-rows: $row;
 }
-

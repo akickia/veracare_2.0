@@ -1,4 +1,4 @@
-@import "../../core/styles/variables";
+@import '../../core/styles/variables';
 
 .primary {
   @include pFont;
@@ -7,16 +7,28 @@
   text-transform: uppercase;
   font-weight: 600;
   padding: $padding-m $padding-xl;
-  border-radius: calc($border-radius*3);
+  border-radius: calc($border-radius * 3);
   box-shadow: $box-shadow;
-  transition: opacity .25s ease;
+  transition: opacity 0.25s ease;
+  cursor: pointer;
+}
+
+.secondary {
+  @include pFont;
+  background-color: $clr-secondary;
+  color: $clr-primary;
+  font-weight: 600;
+  padding: $padding-m $padding-xl;
+  border-radius: calc($border-radius * 3);
+  box-shadow: $box-shadow;
+  transition: opacity 0.25s ease;
   cursor: pointer;
 }
 
 button:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 button:active {
-  transform: scale(.95)
+  transform: scale(0.95);
 }

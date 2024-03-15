@@ -7,6 +7,7 @@ import Services from './pages/services';
 import About from './pages/about';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Admin from './pages/admin';
+import Login from './pages/login';
 
 //TODO: Kolla alla länkar så de går rätt och fungerar
 
@@ -34,6 +35,8 @@ function App() {
             <Route path="/om" element={<About />} />
 
             <Route path="/admin" element={<Admin />} exact />
+            <Route path="/login" element={<Login />} exact />
+            {/* <Route path="/*" element={<ErrorPage />} /> */}
           </Routes>
         </AnimatePresence>
         <Footer />

@@ -7,7 +7,7 @@ export default function Hero({ img, links, children }) {
       <img src={img} />
       <section className="hero__info">
         <section className="hero__links">
-          {links && links.map((link) => <h4>{link}</h4>)}
+          {links && links.map((link, i) => <h4 key={i}>{link}</h4>)}
         </section>
         {children}
       </section>

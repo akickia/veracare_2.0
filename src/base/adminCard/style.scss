@@ -1,0 +1,82 @@
+@import '../../core/styles/variables';
+
+.admin__card {
+  border-bottom: 1px solid $clr-primary;
+  @include flex(row, space-between, center);
+  &--more {
+    border: 3px solid $clr-primary;
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    padding-inline: 10%;
+    .close-btn {
+      position: absolute;
+      right: $base;
+      top: $base;
+      border: none;
+      @include h1Font;
+      background-color: transparent;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    input,
+    select,
+    textarea {
+      font-family: $fontFamily;
+      font-size: $base * 0.9;
+      padding: $padding-s;
+      height: $base * 2.5;
+      width: 100%;
+    }
+    textarea {
+      height: 10rem;
+      overflow: auto;
+    }
+    .img {
+      @include grid(repeat(3, 1fr), auto);
+      margin: auto;
+      gap: $gap * 2;
+      &__card {
+        position: relative;
+        @include flex(column, space-between, center);
+        border: 1px solid $clr-secondary;
+        padding: $padding;
+        min-height: 20rem;
+        gap: $gap;
+        .close-btn {
+          color: $clr-third;
+          font-size: $base;
+          top: 1.5rem;
+          right: 1.5rem;
+        }
+        > img {
+          max-width: 100%;
+          margin-block: 0;
+        }
+        &--change {
+          background-color: white;
+          text-align: left;
+          small {
+            padding-inline: $padding-s;
+          }
+        }
+        &--none {
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .admin__card--more {
+    border-width: 1px;
+    padding-inline: 5%;
+    left: 0;
+    right: 0;
+    .img {
+      @include grid(100%, auto);
+    }
+  }
+}
