@@ -23,7 +23,7 @@ main {
   margin: $margin auto;
   @include grid(100%, auto);
   gap: $gap;
-  min-height: 80%;
+  min-height: 60vh;
 }
 
 .grid {

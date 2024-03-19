@@ -11,12 +11,12 @@ export default function CardPrimary({ item }) {
       <h3>{item.title}</h3>
 
       <section className={openMore ? 'card__info' : 'card__info open'}>
-        <img src={item.img} alt={item.alt} />
+        {/* <img src={item.img} alt={item.alt} /> */}
         <p className="card__info--text">{item.text}</p>
         {item.img2 && (
           <section className="flex-container">
-            {item.img2 && <img src={item.img2} alt={item.alt} />}
-            {item.img3 && <img src={item.img3} alt={item.alt} />}
+            {/* {item.img2 && <img src={item.img2} alt={item.alt} />}
+            {item.img3 && <img src={item.img3} alt={item.alt} />} */}
           </section>
         )}
       </section>
@@ -33,6 +33,7 @@ export default function CardPrimary({ item }) {
         <Button
           link={item.link}
           download={item.link.includes('.pdf') ? true : false}
+          target="_blank"
         >
           {item.linkText}
         </Button>

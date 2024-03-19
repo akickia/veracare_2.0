@@ -1,0 +1,5 @@
+@import '../../core/styles/variables';
+
+.error {
+  @include flex(column, start, stretch);
+}
