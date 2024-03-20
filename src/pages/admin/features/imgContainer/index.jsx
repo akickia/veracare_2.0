@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function AdminCardEditImg({
+export default function ImgContainer({
   text = 'Byta bild?',
   alt,
   handleChange,

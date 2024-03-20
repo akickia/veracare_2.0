@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import CardPrimary from '../cardPrimary';
+import React from 'react';
+import CardPrimary from '../../../../base/cardPrimary';
 import { motion } from 'framer-motion';
 
-export default function AdminCardPreview({
+export default function PreviewService({
   item,
   localChanges,
   setPreview,

@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import './style.scss';
 import { deleteService, updateService } from './data';
-import ConfirmationModule from '../confirmationModule';
-import AdminCardEdit from '../AdminCardEdit';
-import AdminCardPreview from '../AdminCardPreview';
+import ConfirmationModule from '../../../../base/confirmationModule';
+import EditService from '../editService';
+import PreviewService from '../previewService';
 
 export function AdminCard({ item, action }) {
   const url = import.meta.env.VITE_IMG_URL;
@@ -84,7 +84,7 @@ export function AdminCard({ item, action }) {
         </section>
       </article>
       {openEdit && (
-        <AdminCardEdit
+        <EditService
           item={item}
           setOpenEdit={setOpenEdit}
           handleChange={handleChange}
@@ -94,7 +94,7 @@ export function AdminCard({ item, action }) {
         />
       )}
       {preview && (
-        <AdminCardPreview
+        <PreviewService
           item={item}
           localChanges={localChanges}
           setPreview={setPreview}

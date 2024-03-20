@@ -1,7 +1,7 @@
 import React from 'react';
-import AdminCardEditImg from '../adminCardEditImg';
+import ImgContainer from '../imgContainer';
 
-export default function AdminCardEdit({
+export default function EditService({
   item,
   setOpenEdit,
   handleChange,
@@ -43,7 +43,7 @@ export default function AdminCardEdit({
         <div>
           <h3>Bilder: </h3>
 
-          <AdminCardEditImg
+          <ImgContainer
             alt={item.alt}
             handleChange={handleChange}
             imgUrl={imgUrl}
@@ -51,14 +51,14 @@ export default function AdminCardEdit({
           />
 
           {/* {item.img2 ? (
-            <AdminCardEditImg
+            <ImgContainer
               img={item.img2}
               setImg={setImg}
               alt={item.alt}
               handleChange={handleChange}
             />
           ) : (
-            <AdminCardEditImg
+            <ImgContainer
               text="Lägg till bild?"
               setImg={setImg}
               handleChange={handleChange}
@@ -66,14 +66,14 @@ export default function AdminCardEdit({
           )} */}
           {/* 
           {item.img3 ? (
-            <AdminCardEditImg
+            <ImgContainer
               img={item.img3}
               setImg={setImg}
               alt={item.alt}
               handleChange={handleChange}
             />
           ) : (
-            <AdminCardEditImg
+            <ImgContainer
               text="Lägg till bild?"
               setImg={setImg}
               handleChange={handleChange}

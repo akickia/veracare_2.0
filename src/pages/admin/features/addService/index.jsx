@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import AdminCardEditImg from '../adminCardEditImg';
-import AdminCardPreview from '../AdminCardPreview';
+import ImgContainer from '../imgContainer';
+import PreviewService from '../previewService';
 import { addService } from './data';
 
-export default function AdminCardAdd({ setOpenAdd, action }) {
+export default function AddService({ setOpenAdd, action }) {
   const [preview, setPreview] = useState(false);
   const [showError, setShowError] = useState(false);
   const [localChanges, setLocalChanges] = useState({
@@ -87,7 +87,7 @@ export default function AdminCardAdd({ setOpenAdd, action }) {
       <section className="container">
         <div>
           <h3>Bilder: </h3>
-          <AdminCardEditImg
+          <ImgContainer
             setImg={setImg}
             handleChange={handleChange}
             text="Lägg till bild"
@@ -135,7 +135,7 @@ export default function AdminCardAdd({ setOpenAdd, action }) {
         ></input>
       </section>
       {preview && img && (
-        <AdminCardPreview
+        <PreviewService
           item={localChanges}
           localChanges={localChanges}
           setPreview={setPreview}
