@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './style.scss';
 import { useNavigate } from 'react-router-dom';
 import { checkLogin } from './data';
+import { motion } from 'framer-motion';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -29,7 +30,12 @@ export default function Login() {
 
   return (
     <main className="login">
-      <form className="card">
+      <motion.form
+        initial={{ scale: 0 }}
+        animate={{ scale: 1, origin: '-50%' }}
+        transition={{ duration: 0.25 }}
+        className="card"
+      >
         <h1>Välkommen, Veronica!</h1>
         <input
           type="text"
@@ -48,7 +54,7 @@ export default function Login() {
         <button className="primary" onClick={(e) => handleLogin(e)}>
           Logga in
         </button>
-      </form>
+      </motion.form>
     </main>
   );
 }

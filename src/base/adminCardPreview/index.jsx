@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CardPrimary from '../cardPrimary';
 import { motion } from 'framer-motion';
 
@@ -7,6 +7,7 @@ export default function AdminCardPreview({
   localChanges,
   setPreview,
   action,
+  imgUrl,
 }) {
   return (
     <motion.article
@@ -15,7 +16,7 @@ export default function AdminCardPreview({
       transition={{ duration: 0.25 }}
       className="card admin__card--more preview"
     >
-      <CardPrimary item={{ ...item, ...localChanges }} />
+      <CardPrimary item={{ ...item, ...localChanges, img: imgUrl }} />
       <section className="grid-container">
         <button
           className="secondary"

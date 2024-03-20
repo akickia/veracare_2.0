@@ -45,6 +45,7 @@ export default function Footer() {
           <a href="http://akickia.se" target="_blank">
             Created by akickia
           </a>
+          <br />
           <Link to={'/login'}>Logga in som admin</Link>
         </section>
       </article>

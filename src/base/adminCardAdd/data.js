@@ -1,6 +1,7 @@
 const baseURL = `${import.meta.env.VITE_API_URL}/services/`;
 
 const token = localStorage.getItem('token');
+
 export async function addService(img, newItem) {
   console.log('Added item');
   const parsedItem = JSON.stringify(newItem);

@@ -6,8 +6,9 @@ export default function AdminCardEdit({
   item,
   setOpenEdit,
   handleChange,
-  setImg,
+  handleImageChange,
   setPreview,
+  imgUrl,
 }) {
   return (
     <motion.article
@@ -44,17 +45,18 @@ export default function AdminCardEdit({
           <option value={'workshop'}>Workshop</option>
         </select>
       </div>
-      <div>
-        <h3>Bilder: </h3>
-        <section className="img">
+      <section className="container">
+        <div>
+          <h3>Bilder: </h3>
+
           <AdminCardEditImg
-            img={item.img}
-            setImg={setImg}
             alt={item.alt}
             handleChange={handleChange}
+            imgUrl={imgUrl}
+            handleImageChange={handleImageChange}
           />
 
-          {item.img2 ? (
+          {/* {item.img2 ? (
             <AdminCardEditImg
               img={item.img2}
               setImg={setImg}
@@ -67,8 +69,8 @@ export default function AdminCardEdit({
               setImg={setImg}
               handleChange={handleChange}
             />
-          )}
-
+          )} */}
+          {/* 
           {item.img3 ? (
             <AdminCardEditImg
               img={item.img3}
@@ -82,17 +84,17 @@ export default function AdminCardEdit({
               setImg={setImg}
               handleChange={handleChange}
             />
-          )}
-        </section>
-      </div>
-      <div>
-        <h3>Text: </h3>
-        <textarea
-          type="text"
-          defaultValue={item.text}
-          onChange={(e) => handleChange(e, 'text')}
-        />
-      </div>
+          )} */}
+        </div>
+        <div>
+          <h3>Text: </h3>
+          <textarea
+            type="text"
+            defaultValue={item.text}
+            onChange={(e) => handleChange(e, 'text')}
+          />
+        </div>
+      </section>
       <div>
         <h3>Knapptext: </h3>
         <input

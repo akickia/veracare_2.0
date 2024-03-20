@@ -26,12 +26,17 @@ export default function Services({ category }) {
       return a.order - b.order;
     });
   }
-
+  const url = import.meta.env.VITE_IMG_URL;
   const cardsEl =
     data &&
     sortDataByOrder(data.filter((item) => item.category === category)).map(
       (item, i) => {
-        return <CardPrimary item={item} key={i}></CardPrimary>;
+        return (
+          <CardPrimary
+            item={{ ...item, img: `${url}/${item.img}` }}
+            key={i}
+          ></CardPrimary>
+        );
       }
     );
 

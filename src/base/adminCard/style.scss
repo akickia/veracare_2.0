@@ -34,12 +34,11 @@
       width: 100%;
     }
     textarea {
-      height: 10rem;
-      overflow: auto;
+      height: 90%;
     }
-    .img {
-      @include grid(repeat(3, 1fr), auto);
-      margin: auto;
+    .container {
+      @include grid(repeat(2, 1fr), auto);
+
       gap: $gap * 2;
       &__card {
         position: relative;

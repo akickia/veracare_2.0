@@ -1,7 +1,6 @@
 import axios from 'axios';
 const url = import.meta.env.VITE_API_URL + '/users/login';
 export async function checkLogin(body) {
-  console.log(body);
   try {
     const response = await axios.post(url, body, {
       headers: {

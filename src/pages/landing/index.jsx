@@ -8,6 +8,7 @@ import Hero from '../../base/hero';
 
 export default function Landing() {
   const [openMore, setOpenMore] = useState(true);
+  const url = import.meta.env.VITE_IMG_URL;
   return (
     <motion.main
       className="landing"

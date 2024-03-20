@@ -24,7 +24,7 @@ export default function Admin() {
     } else {
       navigate('/login');
     }
-  }, []);
+  }, [openAdd, changes]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -40,7 +40,7 @@ export default function Admin() {
   }, [changes]);
 
   function toggleChanges() {
-    setChanges(!changes);
+    setChanges((changes) => !changes);
   }
 
   function sortDataByOrder(data) {

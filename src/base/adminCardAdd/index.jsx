@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import AdminCardEditImg from '../adminCardEditImg';
 import AdminCardPreview from '../AdminCardPreview';
 import { addService } from './data';
+import { motion } from 'framer-motion';
 
 export default function AdminCardAdd({ setOpenAdd, action }) {
   const [preview, setPreview] = useState(false);
+  const [showError, setShowError] = useState(false);
   const [localChanges, setLocalChanges] = useState({
     text: '',
     title: '',
@@ -15,11 +17,23 @@ export default function AdminCardAdd({ setOpenAdd, action }) {
     category: 'behandlingar',
   });
   const [img, setImg] = useState();
+  const [imgUrl, setImgUrl] = useState();
+
+  const handleImageChange = (event) => {
+    setImg(event.target.files[0]);
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setImgUrl(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   const handleChange = (e, key) => {
     const value = e.target.value;
     setLocalChanges((prevChanges) => ({ ...prevChanges, [key]: value }));
-    console.log(localChanges);
   };
 
   const handlePreview = (e) => {
@@ -27,15 +41,28 @@ export default function AdminCardAdd({ setOpenAdd, action }) {
     setPreview(true);
   };
 
-  const handleAdd = () => {
-    addService(img, localChanges);
-    action();
-    setPreview(false);
-    setOpenAdd(false);
+  const handleAdd = async () => {
+    if (img) {
+      console.log(img, localChanges);
+      const response = await addService(img, localChanges);
+      if (response.status === 201) {
+        action();
+        setOpenAdd(false);
+      } else {
+        setShowError(true);
+      }
+      setPreview(false);
+    }
   };
 
   return (
-    <form className="admin__card--more card" onSubmit={(e) => handlePreview(e)}>
+    <motion.form
+      className="admin__card--more card"
+      initial={{ scale: 0, x: '-50%', y: '-50%' }}
+      animate={{ scale: 1, x: '-50%', y: '-50%', originY: '-50%' }}
+      transition={{ duration: 0.25 }}
+      onSubmit={(e) => handlePreview(e)}
+    >
       <button className="close-btn" onClick={() => setOpenAdd(false)}>
         X
       </button>
@@ -64,26 +91,26 @@ export default function AdminCardAdd({ setOpenAdd, action }) {
           <option value={'workshop'}>Workshop</option>
         </select>
       </div>
-      <div>
-        <h3>Bilder: </h3>
-        <section className="img">
+      <section className="container">
+        <div>
+          <h3>Bilder: </h3>
           <AdminCardEditImg
             setImg={setImg}
             handleChange={handleChange}
             text="Lägg till bild"
+            imgUrl={imgUrl}
+            handleImageChange={handleImageChange}
           />
-          {/* <AdminCardEditImg setImg={setImg2} handleChange={handleChange} />
-          <AdminCardEditImg setImg={setImg3} handleChange={handleChange} /> */}
-        </section>
-      </div>
-      <div>
-        <h3>Text: </h3>
-        <textarea
-          type="text"
-          required
-          onChange={(e) => handleChange(e, 'text')}
-        />
-      </div>
+        </div>
+        <div>
+          <h3>Text: </h3>
+          <textarea
+            type="text"
+            required
+            onChange={(e) => handleChange(e, 'text')}
+          />
+        </div>
+      </section>
       <div>
         <h3>Knapptext: </h3>
         <input
@@ -96,6 +123,14 @@ export default function AdminCardAdd({ setOpenAdd, action }) {
         <h3>Länk: </h3>
         <input type="text" required onChange={(e) => handleChange(e, 'link')} />
       </div>
+      {showError && (
+        <section>
+          <h2>Något gick fel, försök igen! </h2>
+          <p>
+            Dubbelkolla så att alla fält är ifyllda och att en bild är bifogad.
+          </p>
+        </section>
+      )}
       <section className="flex-container">
         <button className="secondary" onClick={() => setOpenAdd(false)}>
           Avbryt
@@ -106,14 +141,15 @@ export default function AdminCardAdd({ setOpenAdd, action }) {
           value={'Förhandsgranska'}
         ></input>
       </section>
-      {preview && (
+      {preview && img && (
         <AdminCardPreview
           item={localChanges}
           localChanges={localChanges}
           setPreview={setPreview}
           action={handleAdd}
+          imgUrl={imgUrl}
         />
       )}
-    </form>
+    </motion.form>
   );
 }
