@@ -46,8 +46,6 @@ $border-radius: 5px;
 @mixin h1Font {
   font-size: $font-h1;
   text-transform: uppercase;
-  color: $clr-primary;
-  text-align: center;
 }
 
 @mixin h2Font {

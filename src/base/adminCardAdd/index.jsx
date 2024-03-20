@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import AdminCardEditImg from '../adminCardEditImg';
 import AdminCardPreview from '../AdminCardPreview';
 import { addService } from './data';
-import { motion } from 'framer-motion';
 
 export default function AdminCardAdd({ setOpenAdd, action }) {
   const [preview, setPreview] = useState(false);
@@ -56,13 +55,7 @@ export default function AdminCardAdd({ setOpenAdd, action }) {
   };
 
   return (
-    <motion.form
-      className="admin__card--more card"
-      initial={{ scale: 0, x: '-50%', y: '-50%' }}
-      animate={{ scale: 1, x: '-50%', y: '-50%', originY: '-50%' }}
-      transition={{ duration: 0.25 }}
-      onSubmit={(e) => handlePreview(e)}
-    >
+    <form className="admin__card--more card" onSubmit={(e) => handlePreview(e)}>
       <button className="close-btn" onClick={() => setOpenAdd(false)}>
         X
       </button>
@@ -102,7 +95,7 @@ export default function AdminCardAdd({ setOpenAdd, action }) {
             handleImageChange={handleImageChange}
           />
         </div>
-        <div>
+        <div className="text">
           <h3>Text: </h3>
           <textarea
             type="text"
@@ -131,7 +124,7 @@ export default function AdminCardAdd({ setOpenAdd, action }) {
           </p>
         </section>
       )}
-      <section className="flex-container">
+      <section className="grid-container">
         <button className="secondary" onClick={() => setOpenAdd(false)}>
           Avbryt
         </button>
@@ -150,6 +143,6 @@ export default function AdminCardAdd({ setOpenAdd, action }) {
           imgUrl={imgUrl}
         />
       )}
-    </motion.form>
+    </form>
   );
 }

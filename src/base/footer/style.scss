@@ -33,7 +33,17 @@ footer {
 @media screen and (max-width: 800px) {
   footer .footer {
     &__content {
+      padding: $padding-s;
       flex-direction: column;
+      .contact {
+        width: 100%;
+        &--links {
+          min-width: 100%;
+          a {
+            font-size: $font-small;
+          }
+        }
+      }
     }
   }
 }

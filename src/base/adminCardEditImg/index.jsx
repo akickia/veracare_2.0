@@ -9,10 +9,10 @@ export default function AdminCardEditImg({
 }) {
   return (
     <>
-      <section className="img__card">
+      <section className="container__card">
         <img src={imgUrl} />
         <section>
-          <section className="img__card--change">
+          <section className="container__card--change">
             <small>{text}</small>
             <input
               type="file"
@@ -20,7 +20,7 @@ export default function AdminCardEditImg({
               onChange={(event) => handleImageChange(event)}
             />
           </section>
-          <section className="img__card--alt">
+          <section className="container__card--alt">
             <small>Bildbeskrivning:</small>
             <input
               type="text"

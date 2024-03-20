@@ -32,3 +32,10 @@ button:hover {
 button:active {
   transform: scale(0.95);
 }
+
+@media screen and (max-width: 800px) {
+  .primary,
+  .secondary {
+    font-size: $font-small;
+  }
+}

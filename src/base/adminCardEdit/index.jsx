@@ -1,6 +1,5 @@
 import React from 'react';
 import AdminCardEditImg from '../adminCardEditImg';
-import { motion } from 'framer-motion';
 
 export default function AdminCardEdit({
   item,
@@ -11,12 +10,7 @@ export default function AdminCardEdit({
   imgUrl,
 }) {
   return (
-    <motion.article
-      initial={{ scale: 0, x: '-50%', y: '-50%' }}
-      animate={{ scale: 1, x: '-50%', y: '-50%', originY: '-50%' }}
-      transition={{ duration: 0.25 }}
-      className="admin__card--more card"
-    >
+    <article className="admin__card--more card">
       <button className="close-btn" onClick={() => setOpenEdit(false)}>
         X
       </button>
@@ -86,7 +80,7 @@ export default function AdminCardEdit({
             />
           )} */}
         </div>
-        <div>
+        <div className="text">
           <h3>Text: </h3>
           <textarea
             type="text"
@@ -111,7 +105,7 @@ export default function AdminCardEdit({
           onChange={(e) => handleChange(e, 'link')}
         />
       </div>
-      <section className="flex-container">
+      <section className="grid-container">
         <button className="secondary" onClick={() => setOpenEdit(false)}>
           Avbryt
         </button>
@@ -124,6 +118,6 @@ export default function AdminCardEdit({
           Förhandsgranska
         </button>
       </section>
-    </motion.article>
+    </article>
   );
 }
