@@ -10,10 +10,7 @@ export default function Footer() {
       <article className="footer">
         <section className="footer__content">
           <Link to="/" className="logo logo--large">
-            <img
-              className="logo logo--large"
-              src="src/assets/img/logo.jpg"
-            ></img>
+            <img className="logo logo--large" src="./img/logo.jpg"></img>
           </Link>
           <section className="contact">
             <h3>Kontakt</h3>

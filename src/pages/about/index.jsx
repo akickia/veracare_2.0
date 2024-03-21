@@ -18,7 +18,7 @@ export default function About() {
     >
       <HeadingContainer heading={'Om mig'} />
       <article className="card hero contact">
-        <img src="../src/assets/img/profil4.jpg" />
+        <img src="./img/profil4.jpg" />
         <section className="contact--links">
           <h3>Kontaktuppgifter</h3>
           <a href="mailto:veronica.lundman@gmail.com">
@@ -65,7 +65,7 @@ export default function About() {
           brinner för - att hjälpa andra som inte mår bra, psykiskt och/eller
           fysiskt.
         </p>
-        <img src="../src/assets/img/yoga-position.jpg" />
+        <img src="./img/yoga-position.jpg" />
         <p>
           Just nu håller jag på mycket med samarbeten av olika event och mässor.
           Jag har event i allt från grupphealing med seans eller med
@@ -74,10 +74,10 @@ export default function About() {
         </p>
         <section className="flex-container">
           <video muted controls>
-            <source src="../src/assets/img/healing-seans.mp4"></source>
+            <source src="./img/healing-seans.mp4"></source>
           </video>
           <video muted controls>
-            <source src="../src/assets/img/frigorande-dans.mp4"></source>
+            <source src="./img/frigorande-dans.mp4"></source>
           </video>
         </section>
       </article>

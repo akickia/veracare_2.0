@@ -14,7 +14,7 @@ export default function Header() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-  
+
   return (
     <header>
       <article className="header">
@@ -34,7 +34,9 @@ export default function Header() {
                   animate={{ x: 0 }}
                   exit={{ x: -300 }}
                   transition={{ duration: 0.5, timingFunction: easeIn }}
-                  onClick={() => {setIsOpen(false)}}
+                  onClick={() => {
+                    setIsOpen(false);
+                  }}
                 >
                   <button className="closebtn" onClick={() => setIsOpen(false)}>
                     &times;
@@ -45,7 +47,7 @@ export default function Header() {
             </AnimatePresence>
           </nav>
         )}
-        <img src="../src/assets/img/logo.jpg" />
+        <img src="./img/logo.jpg" />
       </article>
     </header>
   );

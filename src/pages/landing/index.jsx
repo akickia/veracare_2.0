@@ -71,13 +71,13 @@ export default function Landing() {
           <a target="_blank" href="https://www.facebook.com/VeracareConsulting">
             Läs mer
           </a>
-          <img src="../src/assets/img/profil4.jpg" />
+          <img src="./img/profil4.jpg" />
         </section>
         <section className="card">
           <h3>Nyhet:</h3>
           <p>Jag erbjuder nu även Bambumassage</p>
           <Link to={'./behandlingar'}>Läs mer</Link>
-          <img src="../src/assets/img/Massage.jpg" />
+          <img src="./img/Massage.jpg" />
         </section>
         <section className="card news__span">
           <h3>På gång:</h3>
@@ -89,7 +89,7 @@ export default function Landing() {
           <a target="_blank" href="https://harmoniexpo.com/">
             Länk till Harmoni Expo
           </a>
-          <img src="../src/assets/img/reiki2.jpg" />
+          <img src="./img/reiki2.jpg" />
         </section>
       </article>
 
@@ -157,8 +157,8 @@ export default function Landing() {
             och sen faktiskt tar oss tid till att göra just det.
           </p>
           <section className="flex-container">
-            <img src="../src/assets/img/examen.jpg" />
-            <img src="../src/assets/img/examen2.jpg" />
+            <img src="./img/examen.jpg" />
+            <img src="./img/examen2.jpg" />
           </section>
         </section>
         <p

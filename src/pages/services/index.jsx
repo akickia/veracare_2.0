@@ -46,7 +46,7 @@ export default function Services({ category }) {
       <HeadingContainer heading={category} />
       {category === 'behandlingar' ? (
         <Hero
-          img={'../src/assets/img/treatments.jpg'}
+          img={'./img/treatments.jpg'}
           links={['Reiki-healing', 'Yoga', 'Massage', 'Coaching']}
         >
           <p>
@@ -56,7 +56,7 @@ export default function Services({ category }) {
         </Hero>
       ) : category === 'workshop' ? (
         <Hero
-          img={'../src/assets/img/stress2.jpg'}
+          img={'./img/stress2.jpg'}
           className="card hero"
           links={['Kurser', 'Workshops', 'Föreläsningar']}
         >
@@ -66,7 +66,7 @@ export default function Services({ category }) {
           </p>
         </Hero>
       ) : (
-        <Hero img={'../src/assets/img/massa.jpg'}>
+        <Hero img={'./img/massa.jpg'}>
           <p>
             Jag samarbetar gärna och ofta med andra kunniga och härliga
             människor inom olika områden. Just nu håller jag på mycket med
