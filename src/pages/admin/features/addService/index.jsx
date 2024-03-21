@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ImgContainer from '../imgContainer';
 import PreviewService from '../previewService';
-import { addService } from './data';
+import { addService } from '../../../../core/functions/data';
 
 export default function AddService({ setOpenAdd, action }) {
   const [preview, setPreview] = useState(false);
@@ -42,15 +42,17 @@ export default function AddService({ setOpenAdd, action }) {
 
   const handleAdd = async () => {
     if (img) {
-      console.log(img, localChanges);
       const response = await addService(img, localChanges);
       if (response.status === 201) {
         action();
         setOpenAdd(false);
+        setShowError(false);
       } else {
         setShowError(true);
       }
       setPreview(false);
+    } else {
+      setShowError(true);
     }
   };
 
@@ -115,6 +117,17 @@ export default function AddService({ setOpenAdd, action }) {
       <div>
         <h3>Länk: </h3>
         <input type="text" required onChange={(e) => handleChange(e, 'link')} />
+      </div>
+      <div>
+        <small>Ordning: </small>
+        <input
+          className="order-input"
+          type="number"
+          defaultValue={0}
+          onChange={(e) => {
+            handleChange(e, 'order');
+          }}
+        ></input>
       </div>
       {showError && (
         <section>

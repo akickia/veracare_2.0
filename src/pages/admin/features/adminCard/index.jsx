@@ -1,20 +1,17 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
-import './style.scss';
-import { deleteService, updateService } from './data';
+import { deleteService, updateService } from '../../../../core/functions/data';
 import ConfirmationModule from '../../../../base/confirmationModule';
 import EditService from '../editService';
 import PreviewService from '../previewService';
 
 export function AdminCard({ item, action }) {
-  const url = import.meta.env.VITE_IMG_URL;
-
   const [openEdit, setOpenEdit] = useState(false);
   const [preview, setPreview] = useState(false);
   const [localChanges, setLocalChanges] = useState({});
   const [img, setImg] = useState();
-  const [imgUrl, setImgUrl] = useState(`${url}/${item.img}`);
+  const [imgUrl, setImgUrl] = useState(item.img);
   const [openConf, setOpenConf] = useState(false);
 
   const handleImageChange = (event) => {
@@ -59,18 +56,6 @@ export function AdminCard({ item, action }) {
       <article className="admin__card">
         <h4 onClick={() => setOpenEdit(true)}>{item.title}</h4>
         <section className="flex-container">
-          <div>
-            {/* <h3>Ordning: </h3>
-            <input
-              type="number"
-              required
-              defaultValue={item.order}
-              onChange={(e) => {
-                handleChange(e, 'order');
-              }}
-            ></input> */}
-          </div>
-
           <FontAwesomeIcon
             icon={faEdit}
             onClick={() => setOpenEdit(true)}

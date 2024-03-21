@@ -3,7 +3,7 @@ import CardPrimary from '../../base/cardPrimary';
 import { motion } from 'framer-motion';
 import Button from '../../base/button';
 import HeadingContainer from '../../base/headingContainer';
-import { getServices } from './data';
+import { getServices } from '../../core/functions/data';
 import Hero from '../../base/hero';
 
 export default function Services({ category }) {
@@ -26,17 +26,12 @@ export default function Services({ category }) {
       return a.order - b.order;
     });
   }
-  const url = import.meta.env.VITE_IMG_URL;
+
   const cardsEl =
     data &&
     sortDataByOrder(data.filter((item) => item.category === category)).map(
       (item, i) => {
-        return (
-          <CardPrimary
-            item={{ ...item, img: `${url}/${item.img}` }}
-            key={i}
-          ></CardPrimary>
-        );
+        return <CardPrimary item={item} key={i}></CardPrimary>;
       }
     );
 

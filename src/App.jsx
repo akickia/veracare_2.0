@@ -8,9 +8,7 @@ import About from './pages/about';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Admin from './pages/admin';
 import Login from './pages/login';
-import { useEffect, useState } from 'react';
-import { jwtDecode } from 'jwt-decode';
-import ErrorPage from './pages/error';
+import ErrorPage from './pages/errorPage';
 
 //TODO: Kolla alla länkar så de går rätt och fungerar
 

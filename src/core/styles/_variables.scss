@@ -61,7 +61,6 @@ $border-radius: 5px;
 @mixin pFont {
   font-size: $font-p;
   line-height: $line-height-l;
-  // letter-spacing: $letter-spacing; TODO: Check...
 }
 
 @mixin smallFont {

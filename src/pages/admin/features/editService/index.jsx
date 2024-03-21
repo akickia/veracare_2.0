@@ -105,6 +105,18 @@ export default function EditService({
           onChange={(e) => handleChange(e, 'link')}
         />
       </div>
+      <div>
+        <small>Ordning: </small>
+        <input
+          className="order-input"
+          type="number"
+          required
+          defaultValue={item.order}
+          onChange={(e) => {
+            handleChange(e, 'order');
+          }}
+        ></input>
+      </div>
       <section className="grid-container">
         <button className="secondary" onClick={() => setOpenEdit(false)}>
           Avbryt

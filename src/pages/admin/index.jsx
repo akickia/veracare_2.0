@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { getServices } from '../services/data';
-import { AdminCard } from '../../base/adminCard';
+import { getServices } from '../../core/functions/data';
+import { AdminCard } from './features/adminCard';
 import HeadingContainer from '../../base/headingContainer';
 import './style.scss';
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
-import AdminCardAdd from '../../base/adminCardAdd';
+import AddService from './features/addService';
 
 export default function Admin() {
   const navigate = useNavigate();
@@ -15,10 +15,11 @@ export default function Admin() {
 
   useEffect(() => {
     const token = localStorage.getItem('token') || undefined;
+    const user = localStorage.getItem('user') || undefined;
     if (token && token != undefined) {
       const decoded = jwtDecode(token);
       const currentTime = new Date().getTime() / 1000;
-      if (decoded.exp - currentTime <= 0) {
+      if (decoded.exp - currentTime <= 0 || decoded.username != user) {
         navigate('/login');
       }
     } else {
@@ -84,7 +85,7 @@ export default function Admin() {
           + Lägg till ny service
         </button>
         {openAdd && (
-          <AdminCardAdd setOpenAdd={setOpenAdd} action={toggleChanges} />
+          <AddService setOpenAdd={setOpenAdd} action={toggleChanges} />
         )}
       </article>
       <article className="admin__cards-container">
