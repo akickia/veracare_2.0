@@ -19,7 +19,7 @@ export default function Landing() {
     >
       <HeadingContainer heading={'Välkommen till VeraCare'} />
       <Hero
-        img={'../src/assets/img/profil.jpg'}
+        img={'./img/profil.jpg'}
         links={[
           'STRESSHANTERING',
           'MINDFULLNESS',
