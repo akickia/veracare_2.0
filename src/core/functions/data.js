@@ -1,5 +1,6 @@
 import axios from 'axios';
-const url = import.meta.env.VITE_API_URL;
+const url =
+  'https://ppssjc8azk.execute-api.eu-north-1.amazonaws.com/api/veracare';
 
 //Get services
 export async function getServices() {
