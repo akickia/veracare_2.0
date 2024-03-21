@@ -68,7 +68,9 @@ export default function Landing() {
           <h3>På gång:</h3>
           <p>Kurs i naturlig hudvård - på en budget</p>
           <p>Fredag 29 mars</p>
-          <a href="https://www.facebook.com/VeracareConsulting">Läs mer</a>
+          <a target="_blank" href="https://www.facebook.com/VeracareConsulting">
+            Läs mer
+          </a>
           <img src="../src/assets/img/profil4.jpg" />
         </section>
         <section className="card">
@@ -84,7 +86,7 @@ export default function Landing() {
             Solnahallen
           </p>
           <p>6-7 april</p>
-          <a href="https://www.facebook.com/VeracareConsulting">
+          <a target="_blank" href="https://harmoniexpo.com/">
             Länk till Harmoni Expo
           </a>
           <img src="../src/assets/img/reiki2.jpg" />

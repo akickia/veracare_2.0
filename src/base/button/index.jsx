@@ -4,7 +4,7 @@ import './style.scss';
 
 export default function Button({ link, children, download = false }) {
   return (
-    <Link to={link} download={download}>
+    <Link to={link} target="_blank" download={download}>
       <button className="primary">{children}</button>
     </Link>
   );

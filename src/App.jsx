@@ -10,8 +10,6 @@ import Admin from './pages/admin';
 import Login from './pages/login';
 import ErrorPage from './pages/errorPage';
 
-//TODO: Kolla alla länkar så de går rätt och fungerar
-
 function App() {
   return (
     <div className="App">
