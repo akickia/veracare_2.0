@@ -9,7 +9,7 @@ export default function ErrorPage() {
       </section>
       <section className="card">
         <p>Något gick på tok, försök igen.</p>
-        <img src="https://veracare-bucket.s3.eu-north-1.amazonaws.com/Massage.jpg" />
+        <img src="./img/Massage.jpg" />
       </section>
     </main>
   );

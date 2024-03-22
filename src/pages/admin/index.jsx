@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getServices } from '../../core/functions/data';
+import { checkToken, getServices } from '../../core/functions/data';
 import { AdminCard } from './features/adminCard';
 import HeadingContainer from '../../base/headingContainer';
 import './style.scss';
@@ -14,15 +14,8 @@ export default function Admin() {
   const [openAdd, setOpenAdd] = useState(false);
 
   useEffect(() => {
-    const token = localStorage.getItem('token') || undefined;
-    const user = localStorage.getItem('user') || undefined;
-    if (token && token != undefined) {
-      const decoded = jwtDecode(token);
-      const currentTime = new Date().getTime() / 1000;
-      if (decoded.exp - currentTime <= 0 || decoded.username != user) {
-        navigate('/login');
-      }
-    } else {
+    const token = checkToken();
+    if (!token) {
       navigate('/login');
     }
   }, [openAdd, changes]);

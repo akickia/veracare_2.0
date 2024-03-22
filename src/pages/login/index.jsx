@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './style.scss';
 import { useNavigate } from 'react-router-dom';
-import { checkLogin } from '../../core/functions/data.js';
+import { checkLogin, checkToken } from '../../core/functions/data.js';
 import { motion } from 'framer-motion';
+import { jwtDecode } from 'jwt-decode';
 
 export default function Login() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = checkToken();
+    if (token) {
+      navigate('/admin');
+    }
+  }, []);
 
   const [name, setName] = useState('');
   const [pw, setPw] = useState('');
@@ -17,7 +25,8 @@ export default function Login() {
       const result = await checkLogin(body);
       if (result.success) {
         localStorage.setItem('token', result.token);
-        localStorage.setItem('user', body.username);
+        const key = jwtDecode(result.token);
+        localStorage.setItem('key', key.code);
         navigate('/admin');
       } else {
         localStorage.setItem('token', '');

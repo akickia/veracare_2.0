@@ -43,7 +43,7 @@ export default function Footer() {
             Created by akickia
           </a>
           <br />
-          <Link to={'/login'}>Logga in som admin</Link>
+          <Link to={'/login'}>admin</Link>
         </section>
       </article>
     </footer>

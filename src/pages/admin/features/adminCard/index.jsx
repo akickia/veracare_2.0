@@ -36,9 +36,6 @@ export function AdminCard({ item, action }) {
       ...item,
       ...localChanges,
     };
-    console.log('Item: ', item);
-    console.log('Local: ', localChanges);
-    console.log('Updated: ', updatedItem);
     await updateService(img, updatedItem);
     action();
     setPreview(false);

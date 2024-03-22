@@ -1,7 +1,24 @@
 import axios from 'axios';
+import { jwtDecode } from 'jwt-decode';
 const url =
   'https://ppssjc8azk.execute-api.eu-north-1.amazonaws.com/api/veracare';
 
+//Check token
+export function checkToken() {
+  const token = localStorage.getItem('token') || undefined;
+  const key = localStorage.getItem('key');
+  if (token && token != undefined) {
+    const decoded = jwtDecode(token);
+    const currentTime = new Date().getTime() / 1000;
+    if (decoded.exp - currentTime <= 0 || decoded.code != key) {
+      return false;
+    } else {
+      return true;
+    }
+  } else {
+    return false;
+  }
+}
 //Get services
 export async function getServices() {
   try {
@@ -32,7 +49,6 @@ export async function checkLogin(body) {
 //Add service from adminpage
 export async function addService(img, newItem) {
   const token = localStorage.getItem('token');
-  console.log('Added item');
   const parsedItem = JSON.stringify(newItem);
   const item = btoa(parsedItem);
   const headers = {
@@ -94,7 +110,6 @@ export async function updateService(img, newItem) {
 export async function deleteService(id, category) {
   const token = localStorage.getItem('token');
 
-  console.log(id, category);
   try {
     const response = await axios.delete(
       url + '/services/delete/' + category + '/' + id,
