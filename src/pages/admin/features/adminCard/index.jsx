@@ -13,6 +13,7 @@ export function AdminCard({ item, action }) {
   const [img, setImg] = useState();
   const [imgUrl, setImgUrl] = useState(item.img);
   const [openConf, setOpenConf] = useState(false);
+  const [showError, setShowError] = useState(false);
 
   const handleImageChange = (event) => {
     setImg(event.target.files[0]);
@@ -37,15 +38,19 @@ export function AdminCard({ item, action }) {
       ...localChanges,
     };
     await updateService(img, updatedItem);
-    action();
-    setPreview(false);
-    setOpenEdit(false);
+    if (response.status === 201) {
+      action();
+      setPreview(false);
+      setOpenEdit(false);
+    } else {
+      setShowError(true);
+    }
   };
 
-  const handleDelete = () => {
-    deleteService(item.id, item.category);
-    setOpenConf(false);
+  const handleDelete = async () => {
+    await deleteService(item.id, item.category);
     action();
+    setOpenConf(false);
   };
 
   return (
@@ -73,6 +78,7 @@ export function AdminCard({ item, action }) {
           handleImageChange={handleImageChange}
           setPreview={setPreview}
           imgUrl={imgUrl}
+          showError={showError}
         />
       )}
       {preview && (

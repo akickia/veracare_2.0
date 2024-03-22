@@ -8,6 +8,10 @@ import { jwtDecode } from 'jwt-decode';
 export default function Login() {
   const navigate = useNavigate();
 
+  const [name, setName] = useState('');
+  const [pw, setPw] = useState('');
+  const [showErr, setShowErr] = useState(false);
+
   useEffect(() => {
     const token = checkToken();
     if (token) {
@@ -15,37 +19,33 @@ export default function Login() {
     }
   }, []);
 
-  const [name, setName] = useState('');
-  const [pw, setPw] = useState('');
-
   const handleLogin = async (e) => {
     e.preventDefault();
     const body = { username: name, password: pw };
     try {
       const result = await checkLogin(body);
       if (result.success) {
+        setShowErr(false);
         localStorage.setItem('token', result.token);
         const key = jwtDecode(result.token);
         localStorage.setItem('key', key.code);
         navigate('/admin');
       } else {
         localStorage.setItem('token', '');
-        alert('Felaktiga användaruppgifter, försök igen!');
+        setShowErr(true);
       }
     } catch (error) {
       localStorage.setItem('token', '');
-      alert('Felaktiga användaruppgifter, försök igen!');
+      setShowErr(true);
     }
   };
-
-  //TODO: Alert?
 
   return (
     <main className="login">
       <motion.form
         initial={{ scale: 0 }}
         animate={{ scale: 1, origin: '-50%' }}
-        transition={{ duration: 0.25 }}
+        transition={{ duration: 0.5 }}
         className="card"
       >
         <h1>Välkommen, Veronica!</h1>
@@ -63,9 +63,14 @@ export default function Login() {
           placeholder="Ange lösenord"
           onChange={(e) => setPw(e.target.value)}
         ></input>
-        <button className="primary" onClick={(e) => handleLogin(e)}>
+        <button className="secondary" onClick={(e) => handleLogin(e)}>
           Logga in
         </button>
+        {showErr && (
+          <section className="wrong-input">
+            <h3>Felaktiga användaruppgifter, försök igen</h3>
+          </section>
+        )}
       </motion.form>
     </main>
   );

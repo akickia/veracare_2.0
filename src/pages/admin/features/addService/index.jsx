@@ -61,7 +61,7 @@ export default function AddService({ setOpenAdd, action }) {
       <button className="close-btn" onClick={() => setOpenAdd(false)}>
         X
       </button>
-
+      <h1>Lägg till:</h1>
       <div>
         <h3>Titel: </h3>
         <input

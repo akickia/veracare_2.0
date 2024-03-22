@@ -4,7 +4,6 @@ import { AdminCard } from './features/adminCard';
 import HeadingContainer from '../../base/headingContainer';
 import './style.scss';
 import { useNavigate } from 'react-router-dom';
-import { jwtDecode } from 'jwt-decode';
 import AddService from './features/addService';
 
 export default function Admin() {
@@ -75,7 +74,7 @@ export default function Admin() {
       <HeadingContainer heading={'Admin'} />
       <article className="card">
         <button onClick={() => setOpenAdd(true)} className="secondary">
-          + Lägg till ny service
+          + Lägg till ny
         </button>
         {openAdd && (
           <AddService setOpenAdd={setOpenAdd} action={toggleChanges} />

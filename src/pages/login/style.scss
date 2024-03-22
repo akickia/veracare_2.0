@@ -3,7 +3,7 @@
 .login {
   .card {
     @include grid(100%, auto);
-    gap: $gap * 3;
+    gap: $gap;
     padding: 10% 20%;
     input {
       padding: $padding-s;
@@ -16,6 +16,17 @@
     }
     input:hover {
       background-color: #fff;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .login {
+    .card {
+      padding: 5% 10%;
+      button {
+        margin: auto;
+      }
     }
   }
 }

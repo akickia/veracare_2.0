@@ -8,13 +8,14 @@ export default function EditService({
   handleImageChange,
   setPreview,
   imgUrl,
+  showError,
 }) {
   return (
     <article className="admin__card--more card">
       <button className="close-btn" onClick={() => setOpenEdit(false)}>
         X
       </button>
-
+      <h1>Redigera:</h1>
       <div>
         <h3>Titel: </h3>
         <input
@@ -117,6 +118,14 @@ export default function EditService({
           }}
         ></input>
       </div>
+      {showError && (
+        <section>
+          <h2>Något gick fel, försök igen! </h2>
+          <p>
+            Dubbelkolla så att alla fält är ifyllda och att en bild är bifogad.
+          </p>
+        </section>
+      )}
       <section className="grid-container">
         <button className="secondary" onClick={() => setOpenEdit(false)}>
           Avbryt
