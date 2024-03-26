@@ -11,8 +11,8 @@ export default function PreviewService({
 }) {
   return (
     <motion.article
-      initial={{ scale: 0, x: '-50%', y: '-50%' }}
-      animate={{ scale: 1, x: '-50%', y: '-50%', originY: '-50%' }}
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
       transition={{ duration: 0.25 }}
       className="card admin__card--more preview"
     >
