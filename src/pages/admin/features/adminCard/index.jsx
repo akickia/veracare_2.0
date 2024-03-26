@@ -37,7 +37,7 @@ export function AdminCard({ item, action }) {
       ...item,
       ...localChanges,
     };
-    await updateService(img, updatedItem);
+    const response = await updateService(img, updatedItem);
     if (response.status === 201) {
       action();
       setPreview(false);

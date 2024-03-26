@@ -28,7 +28,6 @@ export default function Admin() {
         console.error('Error in fetchData: ', error);
       }
     };
-    console.log('Changes: ', changes);
     fetchData();
   }, [changes]);
 
@@ -54,7 +53,6 @@ export default function Admin() {
   }
 
   const renderCardsByCategory = () => {
-    console.log('Re-render');
     if (!data) return null;
     const groupedData = groupDataByCategory(data);
     return Object.keys(groupedData).map((category) => (
