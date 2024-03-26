@@ -37,23 +37,23 @@ export default function AddService({ setOpenAdd, action }) {
 
   const handlePreview = (e) => {
     e.preventDefault();
-    setPreview(true);
-  };
-
-  const handleAdd = async () => {
     if (img) {
-      const response = await addService(img, localChanges);
-      if (response.status === 201) {
-        action();
-        setOpenAdd(false);
-        setShowError(false);
-      } else {
-        setShowError(true);
-      }
-      setPreview(false);
+      setPreview(true);
     } else {
       setShowError(true);
     }
+  };
+
+  const handleAdd = async () => {
+    const response = await addService(img, localChanges);
+    if (response.status === 201) {
+      action();
+      setOpenAdd(false);
+      setShowError(false);
+    } else {
+      setShowError(true);
+    }
+    setPreview(false);
   };
 
   return (
