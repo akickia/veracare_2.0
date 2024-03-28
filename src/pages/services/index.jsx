@@ -46,7 +46,7 @@ export default function Services({ category }) {
       {category === 'behandlingar' ? (
         <Hero
           img={'./img/treatments.jpg'}
-          links={['Reiki-healing', 'Yoga', 'Massage', 'Coaching']}
+          links={['Reiki-healing', 'Massage', 'Coaching']}
         >
           <p>
             Här finner du information om de behandlingar jag erbjuder. Jag är
