@@ -1,14 +1,39 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '../../base/button/index';
 import { motion } from 'framer-motion';
 import './style.scss';
 import HeadingContainer from '../../base/headingContainer';
 import { Link } from 'react-router-dom';
 import Hero from '../../base/hero';
+import { getNews } from '../../core/functions/data';
+import CardNews from '../../base/cardNews';
 
 export default function Landing() {
   const [openMore, setOpenMore] = useState(true);
-  const url = import.meta.env.VITE_IMG_URL;
+  const [news, setNews] = useState();
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const jsonData = await getNews();
+        setNews(jsonData.news);
+      } catch (error) {
+        console.error('Error in fetching News: ', error);
+      }
+    };
+    fetchNews();
+  }, []);
+
+  const newsEl = () => {
+    return (
+      <article className="card news">
+        <h2 className="news__span">Aktuellt</h2>
+
+        {news && news.map((item) => <CardNews item={item} key={item.id} />)}
+      </article>
+    );
+  };
+
   return (
     <motion.main
       className="landing"
@@ -62,36 +87,8 @@ export default function Landing() {
           </Button>
         </section>
       </article>
-      <article className="card news">
-        <h2 className="news__span">Aktuellt</h2>
-        <section className="card">
-          <h3>På gång:</h3>
-          <p>Kurs i naturlig hudvård - på en budget</p>
-          <p>Fredag 29 mars</p>
-          <a target="_blank" href="https://www.facebook.com/VeracareConsulting">
-            Läs mer
-          </a>
-          <img src="./img/profil4.jpg" />
-        </section>
-        <section className="card">
-          <h3>Nyhet:</h3>
-          <p>Jag erbjuder nu även Bambumassage</p>
-          <Link to={'./behandlingar'}>Läs mer</Link>
-          <img src="./img/Massage.jpg" />
-        </section>
-        <section className="card news__span">
-          <h3>På gång:</h3>
-          <p>
-            Jag kommer att delta som healer och massör på Harmoni Expo i
-            Solnahallen
-          </p>
-          <p>6-7 april</p>
-          <a target="_blank" href="https://harmoniexpo.com/">
-            Länk till Harmoni Expo
-          </a>
-          <img src="./img/reiki2.jpg" />
-        </section>
-      </article>
+
+      {newsEl()}
 
       <article className="card">
         <h3>

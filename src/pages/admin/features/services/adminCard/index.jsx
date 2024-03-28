@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
-import { deleteService, updateService } from '../../../../core/functions/data';
-import ConfirmationModule from '../../../../base/confirmationModule';
+import {
+  deleteService,
+  updateService,
+} from '../../../../../core/functions/data';
+import ConfirmationModule from '../../../../../base/confirmationModule';
 import EditService from '../editService';
 import PreviewService from '../previewService';
 

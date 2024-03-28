@@ -1,5 +1,5 @@
 import React from 'react';
-import ImgContainer from '../imgContainer';
+import ImgContainer from '../../imgContainer';
 
 export default function EditService({
   item,
@@ -35,51 +35,20 @@ export default function EditService({
           defaultValue={item.category}
         >
           <option disabled>Välj kategori</option>
-          <option value={'samarbeten'}>Samarbeten</option>
+          <option value={'yoga'}>Yoga</option>
           <option value={'behandlingar'}>Behandlingar</option>
-          <option value={'workshop'}>Workshop</option>
+          <option value={'event'}>Event</option>
         </select>
       </div>
       <section className="container">
         <div>
           <h3>Bilder: </h3>
-
           <ImgContainer
             alt={item.alt}
             handleChange={handleChange}
             imgUrl={imgUrl}
             handleImageChange={handleImageChange}
           />
-
-          {/* {item.img2 ? (
-            <ImgContainer
-              img={item.img2}
-              setImg={setImg}
-              alt={item.alt}
-              handleChange={handleChange}
-            />
-          ) : (
-            <ImgContainer
-              text="Lägg till bild?"
-              setImg={setImg}
-              handleChange={handleChange}
-            />
-          )} */}
-          {/* 
-          {item.img3 ? (
-            <ImgContainer
-              img={item.img3}
-              setImg={setImg}
-              alt={item.alt}
-              handleChange={handleChange}
-            />
-          ) : (
-            <ImgContainer
-              text="Lägg till bild?"
-              setImg={setImg}
-              handleChange={handleChange}
-            />
-          )} */}
         </div>
         <div className="text">
           <h3>Text: </h3>

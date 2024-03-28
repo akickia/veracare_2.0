@@ -3,7 +3,9 @@
 .landing {
   .news {
     @include grid(repeat(2, 1fr), auto);
-    &__span {
+
+    &__span,
+    > article:nth-child(4) {
       grid-column: span 2;
     }
   }

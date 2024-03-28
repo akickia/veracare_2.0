@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CardPrimary from '../../base/cardPrimary';
 import { motion } from 'framer-motion';
-import Button from '../../base/button';
 import HeadingContainer from '../../base/headingContainer';
 import { getServices } from '../../core/functions/data';
 import Hero from '../../base/hero';
@@ -54,28 +53,30 @@ export default function Services({ category }) {
             ansluten till e-passi och mina pass finns att boka på bokadirekt.se
           </p>
         </Hero>
-      ) : category === 'workshop' ? (
+      ) : category === 'event' ? (
         <Hero
           img={'./img/stress2.jpg'}
           className="card hero"
-          links={['Kurser', 'Workshops', 'Föreläsningar']}
+          links={['Event', 'Kurser', 'Workshops', 'Föreläsningar']}
         >
           <p>
-            Här finner du information om workshops och kurser som jag håller
-            själv eller tillsammans med andra.
+            Här finner du information om kommande event, workshops och kurser
+            som jag håller själv eller tillsammans med andra.
           </p>
         </Hero>
       ) : (
-        <Hero img={'./img/massa.jpg'}>
+        <Hero img={'./img/yoga2.jpg'} links={['Yin-Yoga', 'Yoga i Härad']}>
           <p>
-            Jag samarbetar gärna och ofta med andra kunniga och härliga
+            Här hittar du information om mina olika Yogaklasser i Eskilstuna och
+            i Härad utanför Strängnäs.
+            {/* Jag samarbetar gärna och ofta med andra kunniga och härliga
             människor inom olika områden. Just nu håller jag på mycket med
             samarbeten i form av olika event och mässor. Jag har event i allt
             från grupphealing med seans eller med soundhealing till frigörande
             dans och skogsbad med yoga. Lättast hittar man dessa event på
-            facebook - Veracare Consulting AB.
+            facebook - Veracare Consulting AB. */}
           </p>
-          <p>På denna sida finns exempel på samarbeten och event.</p>
+          {/* <p>På denna sida finns exempel på samarbeten och event.</p> */}
         </Hero>
       )}
       <section className="grid">{cardsEl && cardsEl}</section>

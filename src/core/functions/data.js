@@ -57,7 +57,6 @@ export async function addService(img, newItem) {
     Filename: img.name,
     Item: item,
   };
-
   try {
     const response = await fetch(url + '/services/add', {
       method: 'POST',
@@ -113,6 +112,99 @@ export async function deleteService(id, category) {
   try {
     const response = await axios.delete(
       url + '/services/delete/' + category + '/' + id,
+
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    return response;
+  } catch (error) {
+    console.error('Error at deleting: ', error);
+    throw error;
+  }
+}
+
+//Get news
+export async function getNews() {
+  try {
+    const response = await axios.get(url + '/news');
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching data: ', error);
+    throw error;
+  }
+}
+
+//Add news
+export async function addNews(img, newItem) {
+  const token = localStorage.getItem('token');
+  const parsedItem = JSON.stringify(newItem);
+  const item = btoa(parsedItem);
+  const headers = {
+    Authorization: `Bearer ${token}`,
+    'Content-Type': img.type,
+    Filename: img.name,
+    Item: item,
+  };
+
+  try {
+    const response = await fetch(url + '/news/add', {
+      method: 'POST',
+      headers: headers,
+      body: img,
+    });
+    return response;
+  } catch (error) {
+    console.error('Error at adding: ', error);
+    throw error;
+  }
+}
+
+//update news
+export async function updateNews(img, newItem) {
+  const token = localStorage.getItem('token');
+
+  const parsedItem = JSON.stringify(newItem);
+  const item = btoa(parsedItem);
+  let headers;
+  if (img) {
+    headers = {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': img.type,
+      Filename: img.name,
+      Item: item,
+    };
+  } else {
+    headers = {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+      Item: item,
+    };
+  }
+
+  try {
+    const response = await fetch(url + '/news/update/' + newItem.id, {
+      method: 'POST',
+      headers: headers,
+      body: img ? img : '',
+    });
+    return response;
+  } catch (error) {
+    console.error('Error at updating: ', error);
+    throw error;
+  }
+}
+
+//Delete news
+export async function deleteNews(id) {
+  const token = localStorage.getItem('token');
+
+  try {
+    const response = await axios.delete(
+      url + '/news/delete/' + id,
 
       {
         headers: {

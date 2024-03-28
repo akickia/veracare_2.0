@@ -11,6 +11,11 @@
   .cards-container {
     @include grid(100%, auto);
     gap: $gap;
+    .admin-news-container {
+      &:hover {
+        cursor: pointer;
+      }
+    }
     h4 {
       text-transform: uppercase;
       &:hover {

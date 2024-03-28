@@ -1,5 +1,5 @@
 import React from 'react';
-import CardPrimary from '../../../../base/cardPrimary';
+import CardPrimary from '../../../../../base/cardPrimary';
 import { motion } from 'framer-motion';
 
 export default function PreviewService({

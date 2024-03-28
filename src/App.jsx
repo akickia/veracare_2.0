@@ -22,14 +22,8 @@ function App() {
               path="/behandlingar"
               element={<Services category={'behandlingar'} />}
             />
-            <Route
-              path="/samarbeten"
-              element={<Services category={'samarbeten'} />}
-            />
-            <Route
-              path="/workshop"
-              element={<Services category={'workshop'} />}
-            />
+            <Route path="/yoga" element={<Services category={'yoga'} />} />
+            <Route path="/event" element={<Services category={'event'} />} />
             <Route path="/om" element={<About />} />
             <Route path="/login" element={<Login />} exact />
             <Route path="/admin" element={<Admin />} exact />

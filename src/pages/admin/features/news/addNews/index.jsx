@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
-import ImgContainer from '../imgContainer';
-import PreviewService from '../previewService';
-import { addService } from '../../../../core/functions/data';
+import ImgContainer from '../../imgContainer';
+import PreviewNews from '../previewNews';
+import { addNews } from '../../../../../core/functions/data';
 
-export default function AddService({ setOpenAdd, action }) {
-  const [preview, setPreview] = useState(false);
+export default function AddNews({ setOpenAddNews, action }) {
+  const [previewNews, setPreviewNews] = useState(false);
   const [showError, setShowError] = useState(false);
   const [localChanges, setLocalChanges] = useState({
     text: '',
     title: '',
-    order: 0,
     alt: '',
     link: '',
-    linkText: '',
-    category: 'behandlingar',
   });
   const [img, setImg] = useState();
   const [imgUrl, setImgUrl] = useState();
@@ -38,30 +35,30 @@ export default function AddService({ setOpenAdd, action }) {
   const handlePreview = (e) => {
     e.preventDefault();
     if (img) {
-      setPreview(true);
+      setPreviewNews(true);
     } else {
       setShowError(true);
     }
   };
 
-  const handleAdd = async () => {
-    const response = await addService(img, localChanges);
+  const handleAddNews = async () => {
+    const response = await addNews(img, localChanges);
     if (response.status === 201) {
       action();
-      setOpenAdd(false);
+      setOpenAddNews(false);
       setShowError(false);
     } else {
       setShowError(true);
     }
-    setPreview(false);
+    setPreviewNews(false);
   };
 
   return (
     <form className="admin__card--more card" onSubmit={(e) => handlePreview(e)}>
-      <button className="close-btn" onClick={() => setOpenAdd(false)}>
+      <button className="close-btn" onClick={() => setOpenAddNews(false)}>
         X
       </button>
-      <h1>Lägg till:</h1>
+      <h1>Lägg till nyhet:</h1>
       <div>
         <h3>Titel: </h3>
         <input
@@ -71,20 +68,6 @@ export default function AddService({ setOpenAdd, action }) {
             handleChange(e, 'title');
           }}
         ></input>
-      </div>
-      <div>
-        <h3>Kategori: </h3>
-        <select
-          onChange={(e) => {
-            handleChange(e, 'category');
-          }}
-          value={localChanges.category}
-        >
-          <option disabled>Välj kategori</option>
-          <option value={'samarbeten'}>Samarbeten</option>
-          <option value={'behandlingar'}>Behandlingar</option>
-          <option value={'workshop'}>Workshop</option>
-        </select>
       </div>
       <section className="container">
         <div>
@@ -107,27 +90,8 @@ export default function AddService({ setOpenAdd, action }) {
         </div>
       </section>
       <div>
-        <h3>Knapptext: </h3>
-        <input
-          type="text"
-          required
-          onChange={(e) => handleChange(e, 'linkText')}
-        />
-      </div>
-      <div>
         <h3>Länk: </h3>
         <input type="text" required onChange={(e) => handleChange(e, 'link')} />
-      </div>
-      <div>
-        <small>Ordning: </small>
-        <input
-          className="order-input"
-          type="number"
-          defaultValue={0}
-          onChange={(e) => {
-            handleChange(e, 'order');
-          }}
-        ></input>
       </div>
       {showError && (
         <section>
@@ -138,7 +102,7 @@ export default function AddService({ setOpenAdd, action }) {
         </section>
       )}
       <section className="grid-container">
-        <button className="secondary" onClick={() => setOpenAdd(false)}>
+        <button className="secondary" onClick={() => setOpenAddNews(false)}>
           Avbryt
         </button>
         <input
@@ -147,12 +111,12 @@ export default function AddService({ setOpenAdd, action }) {
           value={'Förhandsgranska'}
         ></input>
       </section>
-      {preview && img && (
-        <PreviewService
+      {previewNews && (
+        <PreviewNews
           item={localChanges}
           localChanges={localChanges}
-          setPreview={setPreview}
-          action={handleAdd}
+          setPreviewNews={setPreviewNews}
+          action={handleAddNews}
           imgUrl={imgUrl}
         />
       )}
