@@ -18,7 +18,7 @@ export default function About() {
     >
       <HeadingContainer heading={'Om mig'} />
       <article className="card hero contact">
-        <img src="./img/profil4.jpg" />
+        <img src="./img/Profilbild1.jpg" />
         <section className="contact--links">
           <h3>Kontaktuppgifter</h3>
           <a href="mailto:veronica.lundman@gmail.com">

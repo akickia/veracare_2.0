@@ -65,7 +65,7 @@ export default function Services({ category }) {
           </p>
         </Hero>
       ) : (
-        <Hero img={'./img/yoga2.jpg'} links={['Yin-Yoga', 'Yoga i Härad']}>
+        <Hero img={'./img/Yoga.jpg'} links={['Yin-Yoga', 'Yoga i Härad']}>
           <p>
             Här hittar du information om mina olika Yogaklasser i Eskilstuna och
             i Härad utanför Strängnäs.

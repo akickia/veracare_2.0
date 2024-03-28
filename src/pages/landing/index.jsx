@@ -224,7 +224,7 @@ export default function Landing() {
           Utbildning: Frontendutvecklare, 400yhp, Folkuniversitetet Göteborg,
           2022-2024.
         </p>
-        <Button className="primary" link={'www.akickia.se'}>
+        <Button className="primary" link={'https://www.akickia.se'}>
           Kickis hemsida
         </Button>
       </article>

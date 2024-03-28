@@ -1,3 +1,0 @@
-headers: {
-  Authorization: `Bearer ${token}`,
-},
