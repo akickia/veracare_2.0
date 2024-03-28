@@ -217,6 +217,17 @@ export default function Landing() {
           </section>
         </section>
       </article>
+      <article className="card">
+        <p>
+          Denna hemsida är byggd av Kicki Lindstrand våren 2023 och uppdaterades
+          med nya tekniker samt adminmöjligheter som examensarbete våren 2024.
+          Utbildning: Frontendutvecklare, 400yhp, Folkuniversitetet Göteborg,
+          2022-2024.
+        </p>
+        <Button className="primary" link={'www.akickia.se'}>
+          Kickis hemsida
+        </Button>
+      </article>
     </motion.main>
   );
 }
