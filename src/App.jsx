@@ -5,7 +5,7 @@ import './core/styles/style.scss';
 import Landing from './pages/landing';
 import Services from './pages/services';
 import About from './pages/about';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Admin from './pages/admin';
 import Login from './pages/login';
 import ErrorPage from './pages/errorPage';

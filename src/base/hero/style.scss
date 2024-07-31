@@ -13,6 +13,9 @@
     gap: $gap;
     text-align: center;
   }
+  .hero__logo {
+    max-width: 70%;
+  }
 }
 
 @media screen and (max-width: 800px) {

@@ -10,6 +10,10 @@ footer {
       margin: auto;
       gap: $gap;
       padding: $padding;
+      .logo--large {
+        max-width: 13rem;
+        margin: auto;
+      }
     }
     &__copyright * {
       font-size: $font-small;
@@ -22,6 +26,7 @@ footer {
 
 .contact {
   text-align: left;
+  padding-left: 3rem;
   &--links {
     min-width: 20rem;
     @include grid(100%, auto);

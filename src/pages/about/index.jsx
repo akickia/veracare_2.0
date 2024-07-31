@@ -25,7 +25,7 @@ export default function About() {
             <FontAwesomeIcon icon={faEnvelope} /> veronica.lundman@gmail.com
           </a>
           <a href="https://www.facebook.com/VeracareConsulting" target="_blank">
-            <FontAwesomeIcon icon={faFacebook} /> Veracare Consulting AB
+            <FontAwesomeIcon icon={faFacebook} /> Holistic Mind Strängnäs
           </a>
           <a href="https://www.instagram.com/stress_pedagogen/" target="_blank">
             <FontAwesomeIcon icon={faInstagram} /> Stress_pedagogen
@@ -36,9 +36,6 @@ export default function About() {
           </a>
         </section>
         <section className="contact__btns flex-container">
-          <Button link={'https://holisticmindeskilstuna.wordpress.com/'}>
-            Holistic mind
-          </Button>
           <Button
             link={
               'https://www.bokadirekt.se/places/holistic-mind-eskilstuna-35977'
@@ -46,8 +43,11 @@ export default function About() {
           >
             Boka direkt
           </Button>
-          <Button link={'https://facebook.com/veracareConsulting'}>
-            Facebook
+          <Button link={'https://www.facebook.com/VeracareConsulting'}>
+            <FontAwesomeIcon icon={faFacebook} /> Holistic Mind Strängnäs
+          </Button>
+          <Button link={'https://holisticmindeskilstuna.wordpress.com/'}>
+            Holistic Mind Eskilstuna
           </Button>
         </section>
       </article>
@@ -70,7 +70,7 @@ export default function About() {
           Just nu håller jag på mycket med samarbeten av olika event och mässor.
           Jag har event i allt från grupphealing med seans eller med
           soundhealing till frigörande dans och skogsbad med yoga. Lättast
-          hittar man dessa event på facebook - Veracare Consulting AB.
+          hittar man dessa event på facebook - Holistic Mind Strängnäs.
         </p>
         <section className="flex-container">
           <video muted controls>

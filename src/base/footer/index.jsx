@@ -10,7 +10,7 @@ export default function Footer() {
       <article className="footer">
         <section className="footer__content">
           <Link to="/" className="logo logo--large">
-            <img className="logo logo--large" src="./img/logo.jpg"></img>
+            <img className="logo logo--large" src="./img/logo-new.png"></img>
           </Link>
           <section className="contact">
             <h3>Kontakt</h3>
@@ -26,7 +26,7 @@ export default function Footer() {
                 href="https://www.facebook.com/VeracareConsulting"
                 target="_blank"
               >
-                <FontAwesomeIcon icon={faFacebook} /> Veracare Consulting AB
+                <FontAwesomeIcon icon={faFacebook} /> Holistic Mind Strängnäs
               </a>
               <a
                 href="https://www.instagram.com/stress_pedagogen/"
@@ -39,6 +39,7 @@ export default function Footer() {
         </section>
         <section className="footer__copyright">
           <p>Copyright © All Rights Reserved</p>
+          <p>VeraCare Consulting AB</p>
           <a href="http://akickia.se" target="_blank">
             Created by akickia
           </a>

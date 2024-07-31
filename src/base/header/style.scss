@@ -4,10 +4,9 @@ header {
   background-color: $clr-third;
   .header {
     @include flex(row, space-between, center);
-    padding: $padding;
+    padding: 0.35rem $padding;
     max-width: 62.5rem;
     margin: auto;
-    height: 6rem;
     position: relative;
     z-index: 5;
     &__navigation {
@@ -50,7 +49,7 @@ header {
       }
     }
     img {
-      width: 12.5rem;
+      max-width: 6rem;
     }
   }
 }

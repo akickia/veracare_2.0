@@ -3,10 +3,11 @@ import Button from '../../base/button/index';
 import { motion } from 'framer-motion';
 import './style.scss';
 import HeadingContainer from '../../base/headingContainer';
-import { Link } from 'react-router-dom';
 import Hero from '../../base/hero';
 import { getNews } from '../../core/functions/data';
 import CardNews from '../../base/cardNews';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 export default function Landing() {
   const [openMore, setOpenMore] = useState(true);
@@ -42,18 +43,10 @@ export default function Landing() {
       exit={{ opacity: 0 }}
       transition={{ duration: 2 }}
     >
-      <HeadingContainer heading={'Välkommen till VeraCare'} />
-      <Hero
-        img={'./img/profil.jpg'}
-        links={[
-          'STRESSHANTERING',
-          'MINDFULLNESS',
-          'KÄNSLOKOMPETENS',
-          'YOGA',
-          'HEALING',
-          'COACHING',
-        ]}
-      ></Hero>
+      <HeadingContainer heading={'Holistic Mind Strängnäs'} />
+      <Hero img={'./img/profil.jpg'}>
+        <img src={'./img/logo-new.png'} className="hero__logo"></img>
+      </Hero>
       <article className="card">
         <h2>Behöver du hjälp att sänka stressen i din vardag?</h2>
         <h3>Vet du inte hur eller var du ska börja?</h3>
@@ -80,10 +73,10 @@ export default function Landing() {
             Bokadirekt.se
           </Button>
           <Button link={'https://www.facebook.com/VeracareConsulting'}>
-            VeraCare på FaceBook
+            <FontAwesomeIcon icon={faFacebook} /> Holistic Mind Strängnäs
           </Button>
           <Button link={'https://holisticmindeskilstuna.wordpress.com/'}>
-            Holistic Mind
+            Holistic Mind Eskilstuna
           </Button>
         </section>
       </article>
@@ -96,17 +89,13 @@ export default function Landing() {
           friskvårdsberättigade
         </h3>
         <p>
-          Jag är en del av Holistic Mind och mina bokningsbara behandlingar
-          finns på bokadirekt.se.{' '}
-        </p>
-        <p>
           Om du inte hittar en tid som passar så hör av dig till mig så löser vi
           något.
         </p>
         <p>Jag ger kurser via olika aktörer, läs mer under kurser. </p>
         <p>
           För kurser och föreläsningar för grupper/företag: kontaka mig för
-          prisförslag.{' '}
+          prisförslag.
         </p>
         <p>
           <b>Ser fram emot att höra av dig!</b>
@@ -120,10 +109,10 @@ export default function Landing() {
             Bokadirekt.se
           </Button>
           <Button link={'https://www.facebook.com/VeracareConsulting'}>
-            VeraCare på FaceBook
+            <FontAwesomeIcon icon={faFacebook} /> Holistic Mind Strängnäs
           </Button>
           <Button link={'https://holisticmindeskilstuna.wordpress.com/'}>
-            Holistic Mind
+            Holistic Mind Eskilstuna
           </Button>
         </section>
       </article>
@@ -209,10 +198,10 @@ export default function Landing() {
               Bokadirekt.se
             </Button>
             <Button link={'https://www.facebook.com/VeracareConsulting'}>
-              VeraCare på FaceBook
+              <FontAwesomeIcon icon={faFacebook} /> Holistic Mind Strängnäs
             </Button>
             <Button link={'https://holisticmindeskilstuna.wordpress.com/'}>
-              Holistic Mind
+              Holistic Mind Eskilstuna
             </Button>
           </section>
         </section>

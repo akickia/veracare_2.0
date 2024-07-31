@@ -9,7 +9,7 @@ export default function ErrorPage() {
       </section>
       <section className="card">
         <p>Något gick på tok, försök igen.</p>
-        <img src="./img/Massage.jpg" />
+        <img src="./img/logo-new.png" />
       </section>
     </main>
   );

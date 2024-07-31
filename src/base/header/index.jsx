@@ -47,7 +47,7 @@ export default function Header() {
             </AnimatePresence>
           </nav>
         )}
-        <img src="./img/logo.jpg" />
+        <img src="./img/logo-new--small.png" />
       </article>
     </header>
   );
