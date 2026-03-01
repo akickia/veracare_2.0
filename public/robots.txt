@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://holistic-mind-strangnas.netlify.app/sitemap.xml
